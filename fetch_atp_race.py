@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 
 URL = "https://www.atptour.com/en/rankings/singles-race-to-turin"
 OUT_FILE = "atp_race_top500.csv"
+LIMIT = 500
 
 session = requests.Session()
 session.headers.update({
@@ -18,50 +19,57 @@ resp = session.get(URL, timeout=30, allow_redirects=True)
 resp.raise_for_status()
 
 soup = BeautifulSoup(resp.text, "html.parser")
+table = soup.select_one("table")
+if not table:
+    raise RuntimeError("Could not find a table on the page.")
 
-data = []
+# ---- 1) Find header columns ----
+def norm(s: str) -> str:
+    return re.sub(r"\s+", " ", (s or "").strip()).lower()
 
-# The Race page is a real table; rows are in tbody/tr.
-for row in soup.select("table tbody tr"):
-    tds = row.find_all("td")
-    if len(tds) < 2:
+ths = table.select("thead th")
+headers = [norm(th.get_text(" ", strip=True)) for th in ths]
+
+# On ATP Race page, header includes "Player" and "Live Points" (sometimes just "Points"). :contentReference[oaicite:2]{index=2}
+def find_col(possible_names):
+    for i, h in enumerate(headers):
+        for name in possible_names:
+            if name in h:
+                return i
+    return None
+
+player_idx = find_col(["player"])
+points_idx = find_col(["live points", "points"])
+
+if player_idx is None or points_idx is None:
+    raise RuntimeError(f"Could not locate Player/Points columns. Headers seen: {headers}")
+
+# ---- 2) Extract rows ----
+rows_out = [["Player", "Points"]]
+for tr in table.select("tbody tr"):
+    tds = tr.find_all("td")
+    if len(tds) <= max(player_idx, points_idx):
         continue
 
-    # Player name is usually in the 2nd cell
-    name = tds[1].get_text(" ", strip=True)
+    # Player cell often has extra whitespace/icons; text extraction is fine.
+    player = tds[player_idx].get_text(" ", strip=True)
 
-    # "Live Points" cell can contain multiple numbers like: "295 +250 - 295"
-    # So we extract the FIRST integer we see.
-    row_text = row.get_text(" ", strip=True)
-    nums = re.findall(r"\b\d{1,5}\b", row_text)
+    # Points cell can contain "295 +250 - 295" etc; take the first integer.
+    pts_text = tds[points_idx].get_text(" ", strip=True).replace(",", "")
+    m = re.search(r"\b(\d{1,5})\b", pts_text)
+    if not (player and m):
+        continue
 
-    # Heuristic: live points is typically the first "standalone" number after the header fields;
-    # in practice, taking the first number from the points cell works if we read that cell directly.
-    # But because markup can shift, we fall back to scanning the row.
-    points = None
-    # Try last cell first (often contains live points + deltas) :contentReference[oaicite:1]{index=1}
-    if len(tds) >= 3:
-        last_cell = tds[-1].get_text(" ", strip=True)
-        m = re.search(r"\b(\d{1,5})\b", last_cell)
-        if m:
-            points = int(m.group(1))
-
-    # Fallback: any number in the row
-    if points is None and nums:
-        points = int(nums[0])
-
-    if name and points is not None:
-        data.append([name, points])
-
-# Keep top 500
-data = data[:500]
+    rows_out.append([player, int(m.group(1))])
+    if len(rows_out) - 1 >= LIMIT:
+        break
 
 with open(OUT_FILE, "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f)
-    w.writerow(["Player", "Points"])
-    w.writerows(data)
+    w.writerow(rows_out[0])
+    w.writerows(rows_out[1:])
 
-print(f"Wrote {len(data)} rows to {OUT_FILE}")
+print(f"Wrote {len(rows_out)-1} rows to {OUT_FILE}")
 
 
 
