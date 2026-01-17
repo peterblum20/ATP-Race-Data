@@ -7,7 +7,7 @@ OUT_FILE = "atp_race_top500.csv"
 
 headers = {
     "User-Agent": "Mozilla/5.0",
-    "Accept-Language": "en-US,en;q=0.9"
+    "Accept-Language": "en-US,en;q=0.9",
 }
 
 resp = requests.get(URL, headers=headers, timeout=30)
@@ -17,7 +17,7 @@ soup = BeautifulSoup(resp.text, "html.parser")
 
 data = []
 
-# Each player row is in a <tr> with data attributes
+# ATP rankings table rows
 for row in soup.select("table tbody tr"):
     cols = row.find_all("td")
     if len(cols) < 6:
@@ -38,4 +38,5 @@ with open(OUT_FILE, "w", newline="", encoding="utf-8") as f:
     writer.writerows(data)
 
 print(f"Wrote {len(data)} rows")
+
 
