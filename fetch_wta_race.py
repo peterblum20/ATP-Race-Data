@@ -1,104 +1,102 @@
-import csv
 import re
+import csv
 import requests
 from bs4 import BeautifulSoup
 
 BASE_URL = "https://www.wtatennis.com/rankings/race-singles"
-OUT_FILE = "wta_race_top500.csv"
-LIMIT = 500
+OUTFILE = "wta_race_top500.csv"
 
-# WTA page offers rank ranges (1-50, 51-100, ..., 451-500). :contentReference[oaicite:1]{index=1}
-RANGES = [(1, 50), (51, 100), (101, 150), (151, 200), (201, 250),
-          (251, 300), (301, 350), (351, 400), (401, 450), (451, 500)]
+# Some sites behave better with a real browser UA
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
+}
 
-session = requests.Session()
-session.headers.update({
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Referer": "https://www.wtatennis.com/",
-})
+def clean_name(name: str) -> str:
+    name = re.sub(r"\s+", " ", name).strip()
 
-def norm(s: str) -> str:
-    return re.sub(r"\s+", " ", (s or "").strip()).lower()
+    # Remove trailing 3-letter country code (e.g., "Victoria Mboko CAN")
+    name = re.sub(r"\s+[A-Z]{3}$", "", name).strip()
 
-def first_int(s: str):
-    if not s:
-        return None
-    s = s.replace(",", "")
-    m = re.search(r"\b(\d{1,7})\b", s)
-    return int(m.group(1)) if m else None
+    return name
 
-def clean_player(raw: str) -> str:
-    # remove leading movement tokens like "+2 " or "-5 "
-    s = re.sub(r"^[+-]?\d+\s+", "", raw.strip())
-
-    # remove trailing country code like " CAN" / " USA" / " GBR"
-    s = re.sub(r"\s+[A-Z]{3}$", "", s).strip()
-
-    # normalize whitespace
-    s = re.sub(r"\s+", " ", s).strip()
-    return s
-
-def extract_from_html(html: str):
+def parse_rows(html: str):
     soup = BeautifulSoup(html, "html.parser")
-    table = soup.select_one("table")
-    if not table:
-        return []
 
-    headers = [norm(th.get_text(" ", strip=True)) for th in table.select("thead th")]
+    # This selector may differ depending on your existing script;
+    # keep whatever you already have that correctly finds the rows.
+    # Below is a common approach: find all "Rank" rows in the rankings table.
+    rows = []
 
-    def find_col(possible_names):
-        for i, h in enumerate(headers):
-            for name in possible_names:
-                if name in h:
-                    return i
-        return None
-
-    player_idx = find_col(["player"])
-    points_idx = find_col(["points"])
-
-    if player_idx is None or points_idx is None:
-        return []
-
-    out = []
-    for tr in table.select("tbody tr"):
-        tds = tr.find_all("td")
-        if len(tds) <= max(player_idx, points_idx):
+    # Example: find the section containing the "Rank Player ... Points" header, then iterate player blocks
+    # If your current script already extracts Player + Points for top 50, reuse that logic here.
+    for block in soup.select("[data-testid='rankings-table'] tr"):
+        cols = [c.get_text(" ", strip=True) for c in block.select("td")]
+        if not cols:
             continue
 
-        raw_player = tds[player_idx].get_text(" ", strip=True)
-        player = clean_player(raw_player)
+        # Heuristic: last column is points, player name is somewhere in the middle
+        # You should map this to your known-good extraction logic.
+        player = None
+        points = None
 
-        pts_text = tds[points_idx].get_text(" ", strip=True)
-        pts = first_int(pts_text)
+        # Try to find a numeric "Points" field
+        for c in reversed(cols):
+            if re.fullmatch(r"[0-9,]+", c):
+                points = c.replace(",", "")
+                break
 
-        if player and pts is not None:
-            out.append((player, pts))
+        # Try to find the player name: longest non-numeric cell that isn't a country code
+        candidates = [c for c in cols if not re.fullmatch(r"[0-9,]+", c)]
+        if candidates:
+            # Often the player name is the longest text cell
+            player = max(candidates, key=len)
+
+        if player and points:
+            player = clean_name(player)
+            rows.append((player, int(points)))
+
+    # Deduplicate while preserving order
+    seen = set()
+    out = []
+    for p, pts in rows:
+        if p not in seen:
+            seen.add(p)
+            out.append((p, pts))
     return out
 
-rows = [["Player", "Points"]]
-seen = set()
+def fetch_range(lo: int, hi: int) -> str:
+    # Many WTA pages accept rankRange like "51-100"
+    params = {"rankRange": f"{lo}-{hi}"}
+    r = requests.get(BASE_URL, params=params, headers=HEADERS, timeout=30)
+    r.raise_for_status()
+    return r.text
 
-for lo, hi in RANGES:
-    url = f"{BASE_URL}?rankRange={lo}-{hi}"
-    resp = session.get(url, timeout=30, allow_redirects=True)
-    resp.raise_for_status()
+def main():
+    all_rows = []
+    for lo in range(1, 501, 50):
+        hi = lo + 49
+        html = fetch_range(lo, hi)
+        rows = parse_rows(html)
+        all_rows.extend(rows)
 
-    for player, pts in extract_from_html(resp.text):
-        key = (player, pts)
-        if key in seen:
-            continue
-        seen.add(key)
-        rows.append([player, pts])
-        if len(rows) - 1 >= LIMIT:
+    # Final dedupe, then take top 500
+    seen = set()
+    final = []
+    for p, pts in all_rows:
+        if p not in seen:
+            seen.add(p)
+            final.append((p, pts))
+        if len(final) >= 500:
             break
 
-    if len(rows) - 1 >= LIMIT:
-        break
+    with open(OUTFILE, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["Player", "Points"])
+        w.writerows(final)
 
-with open(OUT_FILE, "w", newline="", encoding="utf-8") as f:
-    csv.writer(f).writerows(rows)
+    print(f"Wrote {len(final)} rows to {OUTFILE}")
 
-print(f"Wrote {len(rows) - 1} rows to {OUT_FILE}")
+if __name__ == "__main__":
+    main()
+
 
