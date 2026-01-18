@@ -8,61 +8,67 @@ LIMIT = 500
 
 def clean_name(s: str) -> str:
     s = re.sub(r"\s+", " ", (s or "").strip())
-    # Just in case some country code gets glued onto the name:
-    s = re.sub(r"\s+[A-Z]{3}$", "", s).strip()
     return s
 
-def first_int(s: str):
-    if not s:
+def parse_points_from_text(row_text: str):
+    # row text often contains multiple numbers; points is usually the SECOND-to-last integer
+    nums = re.findall(r"\b\d{1,7}\b", row_text.replace(",", ""))
+    if len(nums) < 2:
         return None
-    s = s.replace(",", "")
-    m = re.search(r"\b(\d{1,7})\b", s)
-    return int(m.group(1)) if m else None
+    return int(nums[-2])
 
 with sync_playwright() as p:
-    browser = p.chromium.launch(headless=True)
+    browser = p.chromium.launch(
+        headless=True,
+        args=[
+            "--disable-blink-features=AutomationControlled",
+            "--no-sandbox",
+        ],
+    )
     page = browser.new_page(
         user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
     )
 
     page.goto(URL, wait_until="domcontentloaded", timeout=60000)
 
-    # Try to dismiss cookie/consent overlays if they appear
-    for txt in ["I Agree", "Accept", "AGREE", "Accept All"]:
-        try:
-            btn = page.get_by_role("button", name=txt)
-            if btn.count() > 0:
-                btn.first.click(timeout=1500)
-                break
-        except:
-            pass
+    # Wait until the page is no longer showing just "Loading..."
+    page.wait_for_function(
+        "() => document.body && !document.body.innerText.includes('Loading...')",
+        timeout=60000
+    )
 
-    # Tennis24/Flashscore-style pages usually render rows with class names containing "rankings__row"
-    page.wait_for_selector('[class*="rankings__row"]', timeout=60000)
+    # Wait until player profile links exist (rankings are loaded)
+    page.wait_for_selector('a[href*="/player/"]', state="attached", timeout=60000)
 
-    # Click "Show more" until we have >= LIMIT rows (or no button exists)
-    while True:
-        row_count = page.locator('[class*="rankings__row"]').count()
-        if row_count >= LIMIT:
+    # Try clicking "Show more" if it exists, to expand beyond the default set
+    for _ in range(30):  # prevent infinite loops
+        links_count = page.locator('a[href*="/player/"]').count()
+        if links_count >= LIMIT:
             break
-
-        # "Show more" is often a link/button at the bottom
         show_more = page.get_by_text("Show more", exact=False)
         if show_more.count() == 0:
             break
-
         try:
             show_more.first.click(timeout=5000)
-            page.wait_for_timeout(1200)  # allow rows to append
+            page.wait_for_timeout(1200)
         except:
             break
 
-    # Extract rows in the browser context (more reliable than parsing HTML text)
+    # Extract rows by anchoring on player links and reading their closest container text
     data = page.evaluate(
         """
         () => {
-          const rows = Array.from(document.querySelectorAll('[class*="rankings__row"]'));
-          return rows.map(r => r.innerText);
+          const anchors = Array.from(document.querySelectorAll('a[href*="/player/"]'));
+          const out = [];
+          for (const a of anchors) {
+            // Find a reasonable container for this player's row/card
+            const row = a.closest('div, tr, li') || a.parentElement;
+            if (!row) continue;
+            const txt = (row.innerText || '').trim();
+            if (txt.length < 10) continue;
+            out.push({ name: a.textContent.trim(), rowText: txt });
+          }
+          return out;
         }
         """
     )
@@ -70,61 +76,33 @@ with sync_playwright() as p:
     browser.close()
 
 rows_out = [["Player", "Points"]]
+seen = set()
 
-for raw in data:
-    # raw often looks like: "1. Bencic Belinda +14 Switzerland 554 2"
-    # We'll pull player name = best non-numeric chunk, points = first reasonable integer near end
-    parts = [p.strip() for p in re.split(r"\\n|\\t", raw) if p.strip()]
-    flat = " ".join(parts)
-    tokens = [t for t in re.split(r"\\s+", flat) if t]
+for item in data:
+    name = clean_name(item.get("name", ""))
+    row_text = item.get("rowText", "")
 
-    # Points: take the last integer-like token (common layout)
-    pts = None
-    for t in reversed(tokens):
-        x = first_int(t)
-        if x is not None:
-            pts = x
-            break
+    if not name:
+        continue
+
+    pts = parse_points_from_text(row_text)
     if pts is None:
         continue
 
-    # Name: remove obvious numeric / country-ish stuff and keep a plausible name span
-    # Find the longest token span with letters.
-    letter_tokens = [t for t in tokens if re.search(r"[A-Za-zÀ-ÖØ-öø-ÿ]", t)]
-    if not letter_tokens:
+    key = name.lower()
+    if key in seen:
         continue
+    seen.add(key)
 
-    # Heuristic: name is usually the first 2–4 “word” tokens after the rank token.
-    # We'll strip leading rank like "1." / "1"
-    idx0 = 0
-    if tokens and re.match(r"^\\d+\\.?$", tokens[0]):
-        idx0 = 1
-
-    # Build a candidate name from the next few tokens until we hit a clear non-name marker
-    name_tokens = []
-    for t in tokens[idx0:]:
-        # Stop at movement markers or pure numbers
-        if re.match(r"^[+-]\\d+$", t) or re.match(r"^\\d+$", t):
-            break
-        # Stop if it looks like a country name (can be multi-word, so we keep it simple)
-        # We'll rely on "first chunk before numeric" most of the time.
-        name_tokens.append(t)
-        if len(name_tokens) >= 4:
-            break
-
-    player = clean_name(" ".join(name_tokens))
-    if not player:
-        continue
-
-    rows_out.append([player, pts])
+    rows_out.append([name, pts])
     if len(rows_out) - 1 >= LIMIT:
         break
 
-# Fail loudly if we didn’t get anything (prevents “headers only” CSV)
 if len(rows_out) <= 1:
-    raise RuntimeError("Scrape returned 0 rows from Tennis24. Likely selector/cookie overlay changed.")
+    raise RuntimeError("Scrape returned 0 rows from Tennis24 (page structure or blocking).")
 
 with open(OUT_FILE, "w", newline="", encoding="utf-8") as f:
     csv.writer(f).writerows(rows_out)
 
 print(f"Wrote {len(rows_out)-1} rows to {OUT_FILE}")
+
