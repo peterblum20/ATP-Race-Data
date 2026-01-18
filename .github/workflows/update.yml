@@ -1,4 +1,4 @@
-name: Update ATP Race CSV
+name: Update ATP & WTA Race CSV
 
 on:
   schedule:
@@ -22,19 +22,21 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4
+        run: |
+          pip install requests beautifulsoup4 playwright
+          python -m playwright install --with-deps chromium
 
       - name: Run ATP scraper
         run: python fetch_atp_race.py
 
-      - name: Run WTA scraper
-        run: python fetch_wta_race.py
-
+      - name: Run WTA scraper (live-tennis via browser)
+        run: python fetch_wta_race_livetennis.py
 
       - name: Commit updated CSV
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add atp_race_top500.csv wta_race_top500.csv
-          git commit -m "Daily ATP Race update" || echo "No changes"
+          git commit -m "Daily ATP & WTA Race update" || echo "No changes"
           git push
+
