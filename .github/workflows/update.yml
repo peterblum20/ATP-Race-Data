@@ -32,6 +32,15 @@ jobs:
       - name: Run WTA scraper (Tennis24)
         run: python fetch_wta_race_tennis24.py
 
+      - name: Upload Tennis24 debug artifacts (if present)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tennis24-debug
+          path: |
+            tennis24_debug.html
+            tennis24_debug.png
+
       - name: Commit updated CSV
         run: |
           git config user.name "github-actions"
