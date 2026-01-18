@@ -1,8 +1,8 @@
 Player,Points
 Jakub Mensik,305
+Alexander Bublik,300
 Sebastian Baez,290
 Hubert Hurkacz,275
-Alexander Bublik,260
 Daniil Medvedev,260
 Tomas Machac,260
 Marcos Giron,210
@@ -29,12 +29,15 @@ Giovanni Mpetshi Perricard,110
 Alex Bolt,109
 Jan-Lennard Struff,105
 Adolfo Daniel Vallejo,105
+Michael Zheng,102
 Clement Chidekh,101
+Cameron Norrie,100
 Gustavo Heide,97
 Zdenek Kolar,96
 Alex de Minaur,95
 Stefan Kozlov,95
 Alexander Zverev,90
+Jaime Faria,88
 Nicolas Mejia,88
 Quentin Halys,86
 Timofey Skatov,86
@@ -42,10 +45,13 @@ Nuno Borges,85
 Rio Noguchi,84
 Daniil Glinka,83
 Hayato Matsuoka,78
+Emilio Nava,77
 James McCabe,77
 Kaichi Uchida,76
+Frances Tiafoe,75
 Francisco Comesana,75
 Tomas Martin Etcheverry,75
+Marton Fucsovics,75
 Yosuke Watanuki,75
 Pol Martin Tiffon,75
 Jay Clarke,75
@@ -55,9 +61,10 @@ Eliot Spizzirri,73
 Aleksandar Vukic,73
 Andrea Collarini,73
 Juan Pablo Varillas,70
+Liam Broady,70
 Rafael Jodar,69
 Michael Mmoh,69
-Liam Broady,68
+Jason Kubler,68
 Kamil Majchrzak,67
 Felix Gill,67
 Casper Ruud,65
@@ -71,7 +78,6 @@ Ben Shelton,60
 Sebastian Korda,60
 Jaume Munar,60
 Valentin Vacherot,60
-Cameron Norrie,60
 Reilly Opelka,60
 Keegan Smith,59
 Lautaro Midon,58
@@ -79,6 +85,7 @@ Alastair Gray,58
 Juan Estevez,58
 Philip Henning,58
 Murphy Cassone,57
+Yannick Hanfmann,56
 Mikhail Kukushkin,55
 Andrej Martin,54
 Marek Gengel,54
@@ -87,6 +94,7 @@ Franco Agamenone,53
 Juan Sebastian Gomez,52
 Jurij Rodionov,52
 Florian Broska,51
+Carlos Alcaraz,50
 Corentin Moutet,50
 Francisco Cerundolo,50
 Damir Dzumhur,50
@@ -94,13 +102,13 @@ Arthur Rinderknech,50
 Ignacio Buse,50
 Marko Topo,50
 Maximus Jones,50
+Maks Kasnikowski,50
 Gianluca Cadenasso,49
 Tomas Barrios Vera,49
 Digvijaypratap Singh,49
 Florent Bax,49
 Hamad Medjedovic,48
 Alejandro Tabilo,48
-Maks Kasnikowski,48
 Carl Emil Overbeck,48
 Duncan Chan,47
 Kyrian Jacquet,47
@@ -112,17 +120,17 @@ Vit Kopriva,45
 Facundo Mena,45
 Cyril Vandermeersch,45
 Sergey Fomin,43
+Zachary Svajda,40
 Stan Wawrinka,40
 Aidan McHugh,40
+Arthur Weber,40
 Buvaysar Gadamauri,39
 Carlos Sanchez Jover,39
 Daniel Merida,39
-Arthur Weber,39
 Andrea Vavassori,38
 Cedrik-Marcel Stebe,38
 Bernard Tomic,38
 Tai Sach,38
-Emilio Nava,37
 Andrej Nedic,37
 Lorenzo Giustino,37
 Lucio Ratti,37
@@ -136,11 +144,9 @@ Marin Cilic,35
 Grigor Dimitrov,35
 Jiri Lehecka,35
 Lorenzo Sonego,35
-Frances Tiafoe,35
 Learner Tien,35
 Botic van de Zandschulp,35
 Gabriel Diallo,35
-Marton Fucsovics,35
 Alexandre Muller,35
 Harold Mayot,35
 Matteo Martineau,35
@@ -274,20 +280,21 @@ Federico Arnaboldi,17
 Thomas Faurel,17
 Charlie Robertson,17
 Taym Al Azmeh,17
+Tim Handel,17
 Andres Santamarta Roig,17
 Samuel Heredia,17
 Rodrigo Alujas,17
 Ozan Baris,17
 Pierre Delage,17
+David Jorda Sanchis,17
 Ryan Fishback,17
-Yannick Hanfmann,16
 Yusuke Kusuhara,16
 Daniel Siniakov,16
 Dhakshineswar Suresh,16
 Gilles Arnaud Bailly,16
 Kimmer Coppejans,16
-Tim Handel,16
 Aidan Kim,16
+Max Hans Rehberg,16
 Anton Shepp,16
 Roberto Carballes Baena,16
 Eliakim Coulibaly,16
@@ -300,14 +307,12 @@ Jose Pereira,16
 Matej Dodig,16
 Maximo Zeitune,16
 Tom Gentzsch,16
-David Jorda Sanchis,16
 Oleksandr Ovcharenko,16
 Ryan Dickerson,16
 Tiago Pereira,16
 Ivan Nedelko,16
 Aziz Ouakaa,16
 Nicolas Oliveira,15
-Max Hans Rehberg,15
 Ryan Colby,15
 Dong Ju Kim,15
 Alexander Ritschard,15
@@ -401,9 +406,9 @@ Geoffrey Blancaneaux,11
 Christoph Negritu,11
 Tomas Curras Abasolo,11
 Michel Hopp,11
+Hyeon Chung,11
 Gabriele Bosio,11
 Giles Hussey,11
-Carlos Alcaraz,10
 Matteo Berrettini,10
 Benjamin Bonzi,10
 Novak Djokovic,10
@@ -443,7 +448,6 @@ Rafael Izquierdo Luque,10
 Maan Kesharwani,10
 Blaise Bicknell,10
 Yassine Dlimi,10
-Hyeon Chung,10
 Yuta Shimizu,10
 Daniel Milavsky,10
 Hiroki Moriya,10
@@ -452,6 +456,7 @@ Manish Sureshkumar,10
 Chen Dong,10
 Michiel De Krom,10
 Siddhant Banthia,9
+Lorenzo Carboni,9
 Suk Hyun Choo,9
 Matyas Fuele,9
 Millen Hurrion,9
@@ -477,11 +482,11 @@ Chase Ferguson,9
 Alan Magadan,9
 Nicolas Zanellato,9
 Benjamin Torrealba,9
+Maxwell Mckennon,9
 Romain Faucon,9
 Ignacio Monzon,9
 Alejo Sanchez Quilez,9
 Petr Bar Biryukov,9
-Lorenzo Carboni,8
 Daniel Elahi Galan,8
 Vignesh Gogineni,8
 Alex Knaff,8
@@ -494,8 +499,3 @@ Vitaliy Sachko,8
 Ziga Sesko,8
 Ofek Shimanov,8
 Radu Albot,8
-Bekkhan Atlangeriev,8
-Mirza Basic,8
-Alexandr Binda,8
-Ugo Blanchet,8
-Federico Cina,8
