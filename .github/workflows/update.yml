@@ -29,8 +29,8 @@ jobs:
       - name: Run ATP scraper
         run: python fetch_atp_race.py
 
-      - name: Run WTA scraper
-        run: python fetch_wta_race.py
+      - name: Run WTA scraper (Tennis24)
+        run: python fetch_wta_race_tennis24.py
 
       - name: Commit updated CSV
         run: |
