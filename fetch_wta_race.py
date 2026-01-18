@@ -1,130 +1,148 @@
 import csv
 import re
 import sys
-from pathlib import Path
-
 import requests
 from bs4 import BeautifulSoup
 
+BASE_URL = "https://www.wtatennis.com/rankings/race-singles"
+OUT_FILE = "wta_race_top500.csv"
+LIMIT = 500
 
-URL = "https://www.wtatennis.com/rankings/race-singles?rankRange=1-500"
-OUT = Path("wta_race_top500.csv")
+# 1-50, 51-100, ... 451-500
+RANGES = [(i, i + 49) for i in range(1, 501, 50)]
 
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Referer": "https://www.wtatennis.com/",
+}
+
+COUNTRY_RE = re.compile(r"^[A-Z]{3}$")
+INT_RE = re.compile(r"^\d{1,7}$")
+POINTS_RE = re.compile(r"^\d{1,3}(?:,\d{3})*$")  # allows "10,990"
 
 def clean_name(name: str) -> str:
-    # Remove trailing country abbreviation if it somehow appears in the same token
-    # e.g. "Victoria Mboko CAN" -> "Victoria Mboko"
-    name = re.sub(r"\s+[A-Z]{3}$", "", name.strip())
-    # Collapse whitespace
-    name = re.sub(r"\s+", " ", name).strip()
+    name = re.sub(r"\s+", " ", (name or "").strip())
+    # remove trailing " CAN" style if present
+    name = re.sub(r"\s+[A-Z]{3}$", "", name).strip()
     return name
-
-
-def fetch_html(url: str) -> str:
-    headers = {
-        # A “real browser” UA helps a lot in GitHub Actions environments
-        "User-Agent": (
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/120.0.0.0 Safari/537.36"
-        ),
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Referer": "https://www.wtatennis.com/rankings",
-        "Connection": "keep-alive",
-    }
-
-    resp = requests.get(url, headers=headers, timeout=30)
-    print(f"WTA HTTP {resp.status_code}, length {len(resp.text)}")
-
-    # If the page is blocked / bot-checked, fail loudly with a useful snippet.
-    if resp.status_code != 200:
-        snippet = resp.text[:500].replace("\n", " ")
-        raise RuntimeError(f"Non-200 response {resp.status_code}. Snippet: {snippet}")
-
-    return resp.text
-
 
 def parse_players_points(html: str):
     soup = BeautifulSoup(html, "html.parser")
-    text = soup.get_text("\n", strip=True)
-    lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+    tokens = list(soup.stripped_strings)
 
-    rows = []
-    i = 0
+    out = []
 
-    # Heuristic: each player block looks like:
-    # "<rank>  <something>" then next line is player name,
-    # later within a few lines we see "<age>  <tournaments>  <points>"
-    rank_two_ints = re.compile(r"^\d{1,4}\s+\d{1,4}$")
-    age_tourn_points = re.compile(r"^\d{1,2}\s+\d{1,3}\s+[\d,]{1,7}$")
+    # Find each player "card" by locating "View Profile"
+    for i, tok in enumerate(tokens):
+        if tok != "View Profile":
+            continue
 
-    while i < len(lines):
-        if rank_two_ints.match(lines[i]):
-            # Candidate block start
-            # Next non-empty line is usually the player name
-            if i + 1 < len(lines):
-                name = lines[i + 1]
-                # Skip obvious non-name junk
-                if not re.search(r"[A-Za-zÀ-ÖØ-öø-ÿ]", name):
-                    i += 1
-                    continue
+        # Look backwards in a reasonable window for:
+        # Name, CountryCode, Age, Tournaments, Points (in that order) :contentReference[oaicite:2]{index=2}
+        window = tokens[max(0, i - 40): i]  # preceding tokens
 
-                # Find points line within next ~15 lines
-                pts = None
-                for j in range(i + 1, min(i + 20, len(lines))):
-                    if age_tourn_points.match(lines[j]):
-                        # Points are last token
-                        pts = lines[j].split()[-1].replace(",", "")
-                        break
+        # Find points: last numeric token before "View Profile"
+        pts_idx = None
+        for j in range(len(window) - 1, -1, -1):
+            t = window[j].replace(",", "")
+            if INT_RE.match(t):  # points / age / tournaments are all ints; we'll disambiguate by structure
+                pts_idx = j
+                break
+        if pts_idx is None:
+            continue
 
-                if pts is not None:
-                    rows.append((clean_name(name), int(pts)))
-                    i += 2
-                    continue
+        # Now we expect: CountryCode, Age, Tournaments, Points at the tail
+        # So points is window[pts_idx], tournaments is window[pts_idx-1], age is window[pts_idx-2]
+        if pts_idx < 2:
+            continue
 
-        i += 1
+        pts_raw = window[pts_idx]
+        trn_raw = window[pts_idx - 1]
+        age_raw = window[pts_idx - 2]
 
-    # De-dup while keeping order (page text can repeat a few items)
+        # Ensure these are ints
+        if not (INT_RE.match(pts_raw.replace(",", "")) and INT_RE.match(trn_raw) and INT_RE.match(age_raw)):
+            continue
+
+        # Country code should be just before age (often) or a few tokens before; search backwards for 3-letter code
+        ctry_idx = None
+        for j in range(pts_idx - 3, max(-1, pts_idx - 10), -1):
+            if j >= 0 and COUNTRY_RE.match(window[j]):
+                ctry_idx = j
+                break
+        if ctry_idx is None:
+            continue
+
+        # Name is typically right before the country code token
+        if ctry_idx == 0:
+            continue
+        name_raw = window[ctry_idx - 1]
+
+        # Filter out obvious non-name junk
+        if not re.search(r"[A-Za-zÀ-ÖØ-öø-ÿ]", name_raw):
+            continue
+
+        name = clean_name(name_raw)
+        points = int(pts_raw.replace(",", ""))
+
+        out.append((name, points))
+
+    # De-dupe while preserving order
     seen = set()
     deduped = []
-    for name, pts in rows:
-        key = (name, pts)
-        if key not in seen:
-            seen.add(key)
-            deduped.append((name, pts))
+    for name, points in out:
+        key = name.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append((name, points))
 
     return deduped
 
-
 def main():
-    html = fetch_html(URL)
-    rows = parse_players_points(html)
+    rows = [["Player", "Points"]]
+    seen_names = set()
 
-    if len(rows) == 0:
-        # Print a hint for debugging if this ever happens again
-        raise RuntimeError(
-            "Scrape returned 0 rows. The response HTML likely changed or was blocked. "
-            "Check the printed HTTP status/length in the Actions log."
-        )
+    for lo, hi in RANGES:
+        url = f"{BASE_URL}?rankRange={lo}-{hi}"
+        resp = requests.get(url, headers=HEADERS, timeout=30)
+        print(f"WTA HTTP {resp.status_code}, length {len(resp.text)} for {lo}-{hi}")
+        resp.raise_for_status()
 
-    # Keep only top 500 (just in case)
-    rows = rows[:500]
+        parsed = parse_players_points(resp.text)
 
-    with OUT.open("w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerow(["Player", "Points"])
-        w.writerows(rows)
+        for name, pts in parsed:
+            if name.lower() in seen_names:
+                continue
+            seen_names.add(name.lower())
+            rows.append([name, pts])
+            if len(rows) - 1 >= LIMIT:
+                break
 
-    print(f"Wrote {len(rows)} rows to {OUT}")
+        if len(rows) - 1 >= LIMIT:
+            break
 
+    if len(rows) <= 1:
+        raise RuntimeError("Scrape returned 0 rows. Page structure or parsing assumptions changed.")
+
+    with open(OUT_FILE, "w", newline="", encoding="utf-8") as f:
+        csv.writer(f).writerows(rows)
+
+    print(f"Wrote {len(rows)-1} rows to {OUT_FILE}")
 
 if __name__ == "__main__":
     try:
         main()
     except Exception as e:
-        print(f"ERROR: {e}")
-        sys.exit(1)
+        print(f"ERROR: {e}", file=sys.stderr)
+        raise
+
 
 
 
