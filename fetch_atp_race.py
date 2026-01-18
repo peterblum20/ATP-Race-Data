@@ -39,7 +39,14 @@ for lo, hi in RANGES:
         if len(tds) < 5:
             continue
 
-        player = tds[1].get_text(" ", strip=True)
+        raw_player = tds[1].get_text(" ", strip=True)
+
+# Remove leading rank / change markers like "1 ", "-3 ", "+2 "
+player = re.sub(r"^[+-]?\d+\s+", "", raw_player)
+
+# Normalize whitespace
+player = re.sub(r"\s+", " ", player).strip()
+
         pts_text = tds[4].get_text(" ", strip=True)
         pts = first_int(pts_text)
 
