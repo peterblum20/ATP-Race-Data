@@ -3,9 +3,13 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
-URL = "https://www.wtatennis.com/rankings/race-singles"
+BASE_URL = "https://www.wtatennis.com/rankings/race-singles"
 OUT_FILE = "wta_race_top500.csv"
 LIMIT = 500
+
+# WTA page offers rank ranges (1-50, 51-100, ..., 451-500). :contentReference[oaicite:1]{index=1}
+RANGES = [(1, 50), (51, 100), (101, 150), (151, 200), (201, 250),
+          (251, 300), (301, 350), (351, 400), (401, 450), (451, 500)]
 
 session = requests.Session()
 session.headers.update({
@@ -25,56 +29,76 @@ def first_int(s: str):
     m = re.search(r"\b(\d{1,7})\b", s)
     return int(m.group(1)) if m else None
 
-resp = session.get(URL, timeout=30, allow_redirects=True)
-resp.raise_for_status()
+def clean_player(raw: str) -> str:
+    # remove leading movement tokens like "+2 " or "-5 "
+    s = re.sub(r"^[+-]?\d+\s+", "", raw.strip())
 
-soup = BeautifulSoup(resp.text, "html.parser")
+    # remove trailing country code like " CAN" / " USA" / " GBR"
+    s = re.sub(r"\s+[A-Z]{3}$", "", s).strip()
 
-# Try to locate a real HTML table first (best case)
-table = soup.select_one("table")
-if not table:
-    raise RuntimeError("Could not find a <table> on the WTA race page.")
+    # normalize whitespace
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
 
-# Map columns by header text (robust to column order changes)
-ths = table.select("thead th")
-headers = [norm(th.get_text(" ", strip=True)) for th in ths]
+def extract_from_html(html: str):
+    soup = BeautifulSoup(html, "html.parser")
+    table = soup.select_one("table")
+    if not table:
+        return []
 
-def find_col(possible_names):
-    for i, h in enumerate(headers):
-        for name in possible_names:
-            if name in h:
-                return i
-    return None
+    headers = [norm(th.get_text(" ", strip=True)) for th in table.select("thead th")]
 
-player_idx = find_col(["player"])
-points_idx = find_col(["points"])
+    def find_col(possible_names):
+        for i, h in enumerate(headers):
+            for name in possible_names:
+                if name in h:
+                    return i
+        return None
 
-if player_idx is None or points_idx is None:
-    raise RuntimeError(f"Could not locate Player/Points columns. Headers seen: {headers}")
+    player_idx = find_col(["player"])
+    points_idx = find_col(["points"])
 
-rows_out = [["Player", "Points"]]
+    if player_idx is None or points_idx is None:
+        return []
 
-for tr in table.select("tbody tr"):
-    tds = tr.find_all("td")
-    if len(tds) <= max(player_idx, points_idx):
-        continue
+    out = []
+    for tr in table.select("tbody tr"):
+        tds = tr.find_all("td")
+        if len(tds) <= max(player_idx, points_idx):
+            continue
 
-    raw_player = tds[player_idx].get_text(" ", strip=True)
-    # Remove leading movement tokens like "+2 " or "-5 " if they appear
-    player = re.sub(r"^[+-]?\d+\s+", "", raw_player)
-    player = re.sub(r"\s+", " ", player).strip()
+        raw_player = tds[player_idx].get_text(" ", strip=True)
+        player = clean_player(raw_player)
 
-    pts_text = tds[points_idx].get_text(" ", strip=True)
-    pts = first_int(pts_text)
+        pts_text = tds[points_idx].get_text(" ", strip=True)
+        pts = first_int(pts_text)
 
-    if player and (pts is not None):
-        rows_out.append([player, pts])
+        if player and pts is not None:
+            out.append((player, pts))
+    return out
 
-    if len(rows_out) - 1 >= LIMIT:
+rows = [["Player", "Points"]]
+seen = set()
+
+for lo, hi in RANGES:
+    url = f"{BASE_URL}?rankRange={lo}-{hi}"
+    resp = session.get(url, timeout=30, allow_redirects=True)
+    resp.raise_for_status()
+
+    for player, pts in extract_from_html(resp.text):
+        key = (player, pts)
+        if key in seen:
+            continue
+        seen.add(key)
+        rows.append([player, pts])
+        if len(rows) - 1 >= LIMIT:
+            break
+
+    if len(rows) - 1 >= LIMIT:
         break
 
 with open(OUT_FILE, "w", newline="", encoding="utf-8") as f:
-    w = csv.writer(f)
-    w.writerows(rows_out)
+    csv.writer(f).writerows(rows)
 
-print(f"Wrote {len(rows_out)-1} rows to {OUT_FILE}")
+print(f"Wrote {len(rows) - 1} rows to {OUT_FILE}")
+
