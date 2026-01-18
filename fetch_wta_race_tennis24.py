@@ -1,63 +1,48 @@
 import csv
 import re
-from pathlib import Path
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeoutError
 
 URL = "https://www.tennis24.com/rankings/wta-race/"
 OUT_FILE = "wta_race_top500.csv"
 LIMIT = 500
 
-DEBUG_HTML = Path("tennis24_debug.html")
-DEBUG_PNG = Path("tennis24_debug.png")
+def clean_name(name: str) -> str:
+    # "Knutson Gabriela" etc — no country abbreviations here; those are in a separate cell
+    name = (name or "").strip()
+    name = re.sub(r"\s+", " ", name)
+    return name
 
-def clean_name(s: str) -> str:
-    s = re.sub(r"\s+", " ", (s or "").strip())
-    return s
+def clean_int(s: str):
+    s = (s or "").strip().replace(",", "")
+    if not s or not re.fullmatch(r"\d+", s):
+        return None
+    return int(s)
 
-def dump_debug(page, note: str):
-    print(f"[DEBUG] {note}")
-    try:
-        html = page.content()
-        DEBUG_HTML.write_text(html, encoding="utf-8")
-        page.screenshot(path=str(DEBUG_PNG), full_page=True)
-        print(f"[DEBUG] Wrote {DEBUG_HTML} ({len(html)} chars) and {DEBUG_PNG}")
-    except Exception as e:
-        print(f"[DEBUG] Failed to write debug files: {e}")
-
-def try_click_any(page):
-    # Common consent frameworks/buttons across Flashscore/Tennis24 properties
-    selectors = [
+def try_accept_cookies(page):
+    # Tennis24 uses OneTrust (present in your debug HTML) :contentReference[oaicite:2]{index=2}
+    for sel in [
+        "#onetrust-accept-btn-handler",
         "button:has-text('Accept')",
+        "button:has-text('Accept all')",
         "button:has-text('I Agree')",
         "button:has-text('Agree')",
-        "button:has-text('Accept all')",
-        "#onetrust-accept-btn-handler",
-        "button#didomi-notice-agree-button",
         "button:has-text('OK')",
-        "button:has-text('Got it')",
-    ]
-    for sel in selectors:
+    ]:
         try:
             loc = page.locator(sel)
             if loc.count() > 0:
                 loc.first.click(timeout=1500)
-                page.wait_for_timeout(800)
+                page.wait_for_timeout(700)
                 return True
         except Exception:
             pass
     return False
 
 def main():
-    rows_out = [["Player", "Points"]]
-
     with sync_playwright() as p:
         browser = p.chromium.launch(
             headless=True,
-            args=[
-                "--no-sandbox",
-                "--disable-dev-shm-usage",
-                "--disable-blink-features=AutomationControlled",
-            ],
+            args=["--no-sandbox", "--disable-dev-shm-usage", "--disable-blink-features=AutomationControlled"],
         )
         context = browser.new_context(
             user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36",
@@ -67,85 +52,84 @@ def main():
         page = context.new_page()
 
         page.goto(URL, wait_until="domcontentloaded", timeout=60000)
-        print("[DEBUG] URL:", page.url)
-        print("[DEBUG] Title:", page.title())
+        try_accept_cookies(page)
 
-        # Try to clear consent overlays
-        try_click_any(page)
+        # Wait for table rows to exist (your HTML clearly contains rankingTable__row) :contentReference[oaicite:3]{index=3}
+        page.wait_for_selector(".rankingTable__row", timeout=60000)
 
-        # Wait a bit for JS to fetch rankings
-        page.wait_for_timeout(2500)
+        # Click "Show more" until we have enough rows or it stops increasing
+        # Your HTML shows the button text and structure. :contentReference[oaicite:4]{index=4}
+        max_clicks = 50  # safety
+        for _ in range(max_clicks):
+            row_count = page.locator(".rankingTable__row").count()
+            # includes header row; we’ll handle that when parsing
+            if row_count >= (LIMIT + 1):
+                break
 
-        # If the page is still just "Loading...", give it more time (raw HTML shows Loading) :contentReference[oaicite:1]{index=1}
-        try:
-            page.wait_for_function(
-                "() => document.body && !document.body.innerText.includes('Loading...')",
-                timeout=45000
-            )
-        except PWTimeoutError:
-            # Still loading; dump debug and fail
-            dump_debug(page, "Timed out waiting for Loading... to disappear.")
-            raise RuntimeError("Tennis24 still showing 'Loading...' after 45s (likely blocked or stuck).")
+            show_more = page.locator('button[data-testid="wcl-buttonLink"]', has_text="Show more")
+            if show_more.count() == 0:
+                break
 
-        # Try again after loading finishes
-        try_click_any(page)
-        page.wait_for_timeout(1500)
+            # Click and wait for more rows (count increases)
+            try:
+                show_more.first.click(timeout=5000)
+            except PWTimeoutError:
+                break
 
-        # Now attempt to detect ANY rankings rows.
-        # Instead of relying on class names, look for text patterns like "Rankings" + many numeric rows.
-        body_text = page.locator("body").inner_text(timeout=5000)
-        digits = len(re.findall(r"\b\d{1,4}\b", body_text))
-        print("[DEBUG] Digit-token count in body:", digits)
+            # Wait for loading overlay to finish (in your HTML it says "Loading.") :contentReference[oaicite:5]{index=5}
+            # Don’t hard-fail if it lingers; just give it time.
+            page.wait_for_timeout(1200)
 
-        # Pull candidate “row lines” from the page text.
-        # On Tennis24 race rankings, each entry typically includes rank, player name, country, points.
-        lines = [ln.strip() for ln in body_text.splitlines() if ln.strip()]
-        candidates = []
-        for ln in lines:
-            # Heuristic: line containing a rank and points somewhere
-            if re.search(r"\b\d{1,4}\b", ln) and re.search(r"\b\d{2,7}\b", ln) and re.search(r"[A-Za-z]", ln):
-                candidates.append(ln)
+            # If row count doesn’t increase after a click, stop
+            new_count = page.locator(".rankingTable__row").count()
+            if new_count <= row_count:
+                break
 
-        print("[DEBUG] Candidate line count:", len(candidates))
-        if len(candidates) < 20:
-            dump_debug(page, "Not enough candidate ranking lines found in body text.")
-            raise RuntimeError("Scrape returned 0 rows from Tennis24 (no ranking-like text detected).")
+        # Parse rows
+        rows = [["Player", "Points"]]
+        row_locs = page.locator(".rankingTable__row")
 
-        # Parse from candidate lines.
-        # We’ll take: player name = longest letter chunk; points = last integer in the line.
+        # Skip header row by requiring a player link
+        n = row_locs.count()
         seen = set()
-        for ln in candidates:
-            nums = re.findall(r"\b\d{1,7}\b", ln.replace(",", ""))
-            if not nums:
-                continue
-            pts = int(nums[-1])
 
-            # Pick the most name-like phrase: 2–5 word sequence containing letters
-            name_phrases = re.findall(r"[A-Za-zÀ-ÖØ-öø-ÿ'’\-]+(?:\s+[A-Za-zÀ-ÖØ-öø-ÿ'’\-]+){1,4}", ln)
-            if not name_phrases:
+        for i in range(n):
+            r = row_locs.nth(i)
+
+            # Player anchor
+            a = r.locator("a.rankingTable__href")
+            if a.count() == 0:
                 continue
-            name = clean_name(max(name_phrases, key=len))
+
+            name = clean_name(a.first.inner_text().strip())
+
+            # Points cell (bold, center, points) :contentReference[oaicite:6]{index=6}
+            pts_text = r.locator(".rankingTable__cell--points").first.inner_text().strip()
+            pts = clean_int(pts_text)
+            if not name or pts is None:
+                continue
 
             key = name.lower()
             if key in seen:
                 continue
             seen.add(key)
 
-            rows_out.append([name, pts])
-            if len(rows_out) - 1 >= LIMIT:
+            rows.append([name, pts])
+            if len(rows) - 1 >= LIMIT:
                 break
 
         browser.close()
 
-    if len(rows_out) <= 1:
-        raise RuntimeError("Parsed 0 rows from Tennis24 after candidate extraction.")
+    if len(rows) <= 1:
+        raise RuntimeError("Scrape returned 0 rows (table present but parsing failed).")
 
     with open(OUT_FILE, "w", newline="", encoding="utf-8") as f:
-        csv.writer(f).writerows(rows_out)
+        csv.writer(f).writerows(rows)
 
-    print(f"Wrote {len(rows_out)-1} rows to {OUT_FILE}")
+    print(f"Wrote {len(rows)-1} rows to {OUT_FILE}")
 
 if __name__ == "__main__":
     main()
+
 
 
