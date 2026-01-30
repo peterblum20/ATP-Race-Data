@@ -1,8 +1,8 @@
 Player,Points
-Aryna Sabalenka,1280
+Aryna Sabalenka,1800
+Elena Rybakina,1408
 Elina Svitolina,1030
 Jessica Pegula,975
-Elena Rybakina,888
 Mirra Andreeva,848
 Victoria Mboko,847
 Iva Jovic,691
@@ -61,9 +61,11 @@ Himeno Sakatsume,127
 Aliaksandra Sasnovich,126
 Emma Raducanu,125
 Olga Danilovic,124
+Solana Sierra,121
 Emma Navarro,119
 Liudmila Samsonova,119
 Dominika Salkova,118
+Donna Vekic,114
 Petra Marcinko,112
 Linda Klimovicova,110
 Leylah Fernandez,110
@@ -75,9 +77,8 @@ Ann Li,102
 Barbora Krejcikova,101
 Joanna Garland,101
 Sofia Costoulas,101
-Solana Sierra,99
 Shuai Zhang,98
-Donna Vekic,92
+Tatiana Prozorova,90
 Caty McNally,89
 Renata Zarazua,88
 Moyuka Uchijima,86
@@ -98,7 +99,6 @@ Dayana Yastremska,71
 Daria Kasatkina,71
 Ekaterina Alexandrova,71
 Arina Rodionova,68
-Tatiana Prozorova,68
 (1998) Yuan Yue,67
 Francesca Jones,65
 Rebecca Sramkova,65
@@ -106,6 +106,7 @@ Sonay Kartal,64
 Tamara Zidansek,63
 Elena Pridankina,62
 Marketa Vondrousova,61
+Camila Osorio,61
 Lin Zhu,57
 Polina Iatcenko,56
 Tatjana Maria,56
@@ -133,7 +134,6 @@ Katie Boulter,41
 Sloane Stephens,41
 Katie Volynets,41
 Sara Bejlek,40
-Camila Osorio,39
 Mai Hontama,39
 Chloe Paquet,38
 Kamilla Rakhimova,37
@@ -303,20 +303,19 @@ Kristina Kroitor,0
 Sofia Martianova,0
 Laima Vladson,0
 Natalia Sousa Salazar,0
-Ilinca Sagmar,0
 Loes Ebeling Koning,0
 Tamara Sramkova,0
 Tian Jialin,0
 Micol Salvadori,0
 Maria Serban Isabella,0
 Stefaniya Pushkar,0
+Sonja Zhenikhova,0
 Feier Hu,0
 Inka Wawrzkiewicz,0
 Kallista Liu,0
 Chenting Zhu,0
 Kenzie Nguyen,0
 Reina Goto,0
-Ustiniya Lekomtseva,0
 Eleejah Inisan,0
 Shiho Tsujioka,0
 Ekaterina Perelygina,0
@@ -324,7 +323,6 @@ Jana Otzipka,0
 Cristina Diaz Adrover,0
 Julia Stusek,0
 Johanna Brockmann Tessa,0
-Ruth Roura Llaverias,0
 Josefina Estevez,0
 Jeline Vandromme,0
 Anastasiia Firman,0
@@ -373,6 +371,7 @@ Liu Yuhan,0
 Margaux Komano,0
 Allura Zamarripa,0
 Katerina Mandelikova,0
+Miyu Nakashima,0
 Ikumi Yamazaki,0
 Sophie Steur Joelle Lilly,0
 Matilde Jorge,0
@@ -394,10 +393,12 @@ Antonia Schmidt,0
 Jiangxue Han,0
 Ariana Arseneault,0
 Misaki Matsuda,0
+Mana Kawamura,0
 Esther Adeshina,0
 Kristina Novak,0
 Meiling Wang,0
 Arlinda Rushiti,0
+Fiona Ganz,0
 Dalayna Hewitt,0
 Alana Smith,0
 Malene Helgo,0
@@ -429,11 +430,11 @@ Ekaterina Yashina,0
 Valeria Savinykh,0
 Urszula Radwanska,0
 Katarina Kujovic,0
-Yuka Naito,0
 Tamila Gadamauri,0
 Juliana Giaccio,0
 Meritxell Teixido Garcia,0
 Maya Iyengar,0
+Ilinca Sagmar,0
 Noemi Maines,0
 Amelie Hejtmankova,0
 Varvara Panshina,0
@@ -453,10 +454,12 @@ Anna Snigireva,0
 Lea Nilsson,0
 Yuno Kitahara,0
 Alja Senica,0
+Ustiniya Lekomtseva,0
 Candela Vazquez,0
 Mika Stojsavljevic,0
 Yufei Ren,0
 Lidia Encheva,0
+Ruth Roura Llaverias,0
 Alisa Oktiabreva,0
 Maria Gonzalez Daniele Justina,0
 Carla Markus,0
@@ -496,6 +499,3 @@ Bianca Barbulescu,0
 Isabella Barrera Aguirre,0
 Ginevra Parentini,0
 Luciana Moyano,0
-Carolina Kuhl,0
-Nala Milic Ela,0
-Madelief Hageman,0
