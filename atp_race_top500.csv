@@ -1,8 +1,8 @@
 Player,Points
 Carlos Alcaraz,2900
+Daniil Medvedev,1650
+Jannik Sinner,1550
 Novak Djokovic,1400
-Daniil Medvedev,1400
-Jannik Sinner,1300
 Alexander Zverev,1290
 Alex de Minaur,1035
 Ben Shelton,1000
@@ -58,9 +58,9 @@ Jiri Lehecka,245
 Zachary Svajda,241
 Zizou Bergs,240
 Yibing Wu,237
+Toby Samuel,236
 Botic van de Zandschulp,235
 Adrian Mannarino,235
-Toby Samuel,225
 Jaime Faria,219
 Juan Manuel Cerundolo,216
 Alexander Blockx,215
@@ -109,6 +109,7 @@ Pablo Carreno Busta,148
 Federico Agustin Gomez,147
 Luca Nardi,145
 Elmer Moller,145
+Henrique Rocha,141
 Elias Ymer,140
 Zdenek Kolar,139
 Emilio Nava,137
@@ -124,12 +125,12 @@ Tomas Barrios Vera,122
 Alexis Galarneau,121
 Alexei Popyrin,120
 Patrick Kypson,120
-Henrique Rocha,119
 Francisco Comesana,118
 Pol Martin Tiffon,117
 Arthur Fery,114
 Dalibor Svrcina,112
 Francesco Passaro,112
+Marco Cecchinato,111
 Corentin Moutet,110
 Damir Dzumhur,110
 Nicolai Budkov Kjaer,110
@@ -139,6 +140,7 @@ Gustavo Heide,109
 Nishesh Basavareddy,108
 Nicolas Mejia,108
 Moise Kouame,108
+Pavel Kotov,107
 Keegan Smith,106
 Stefanos Sakellaridis,105
 Guido Ivan Justo,105
@@ -149,6 +151,7 @@ Dusan Lajovic,102
 Jurij Rodionov,102
 Chun-Hsin Tseng,101
 Juncheng Shang,100
+Marco Trungelliti,100
 Jay Clarke,100
 Facundo Diaz Acosta,100
 Federico Cina,99
@@ -174,11 +177,9 @@ Michael Geerts,88
 Mackenzie McDonald,87
 Braden Shick,87
 Andrea Collarini,87
-Marco Cecchinato,86
 Stefano Napolitano,86
 Gabriel Diallo,85
 Gael Monfils,85
-Pavel Kotov,85
 Otto Virtanen,85
 Remy Bertola,85
 Mariano Navone,84
@@ -198,7 +199,6 @@ Alejandro Moro Canas,76
 Alastair Gray,76
 Lorenzo Sonego,75
 Alexandre Muller,75
-Marco Trungelliti,75
 Carlos Sanchez Jover,75
 Adam Walton,74
 Pedro Boscardin Dias,74
@@ -206,6 +206,7 @@ Lorenzo Giustino,73
 Andrej Martin,72
 Eduardo Ribeiro,72
 Sean Cuenin,71
+Filippo Romano,71
 Valentin Royer,70
 Buvaysar Gadamauri,70
 Bernard Tomic,70
@@ -216,6 +217,7 @@ Miguel Damas,68
 Hugo Dellien,67
 Franco Agamenone,67
 Jan Choinski,66
+Genaro Alberto Olivieri,66
 Marc-Andrea Huesler,65
 Oleg Prihodko,65
 Tom Gentzsch,64
@@ -230,6 +232,7 @@ Roberto Carballes Baena,62
 Diego Dedura,62
 Lui Maxted,62
 Manas Dhamne,62
+Maxim Mrva,61
 Andres Andrade,61
 Nikolas Sanchez Izquierdo,61
 Roberto Bautista Agut,60
@@ -263,11 +266,9 @@ Andrea Vavassori,51
 Andrea Guerrieri,51
 Guy Den Ouden,50
 Yasutaka Uchiyama,50
-Maxim Mrva,50
 Cyril Vandermeersch,50
 Justin Engel,49
 Max Schoenhaus,49
-Filippo Romano,49
 Alex Barrena,49
 Samuele Pieri,49
 Tai Sach,49
@@ -291,7 +292,6 @@ Ivan Gakhov,44
 Yi Zhou,44
 Dan Added,44
 Akira Santillan,44
-Genaro Alberto Olivieri,44
 Daniel Milavsky,44
 Niels Visker,44
 Lilian Marmousez,43
