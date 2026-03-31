@@ -1,16 +1,16 @@
 Player,Points
 Aryna Sabalenka,3800
 Elena Rybakina,3483
-Jessica Pegula,2405
+Jessica Pegula,2437
 Elina Svitolina,2255
 Karolina Muchova,1945
 Victoria Mboko,1927
 Coco Gauff,1695
 Mirra Andreeva,1368
 Amanda Anisimova,1130
-Belinda Bencic,1079
+Belinda Bencic,1111
 Iga Swiatek,1020
-Iva Jovic,916
+Iva Jovic,948
 Cristina Bucsa,771
 Sorana Cirstea,764
 Linda Noskova,720
@@ -18,21 +18,21 @@ Jelena Ostapenko,717
 Alexandra Eala,711
 Elise Mertens,705
 Kimberly Birrell,678
-Sara Bejlek,640
+Sara Bejlek,672
+Anna Kalinskaya,663
 Elisabetta Cocciaretto,638
-Anna Kalinskaya,631
+Hailey Baptiste,629
 Clara Tauson,627
 Maria Sakkari,626
-Hailey Baptiste,597
-Janice Tjen,588
-Madison Keys,586
-Magdalena Frech,582
+Janice Tjen,620
+Madison Keys,618
+Magdalena Frech,614
+Peyton Stearns,583
 (2001) Wang Xinyu,573
+Diana Shnaider,567
 Jasmine Paolini,562
 Magda Linette,558
-Peyton Stearns,552
-Diana Shnaider,535
-Yulia Putintseva,496
+Yulia Putintseva,527
 Ekaterina Alexandrova,491
 Jaqueline Cristian,489
 Katie Boulter,484
@@ -40,11 +40,11 @@ Talia Gibson,468
 Marta Kostyuk,465
 Zeynep Sonmez,412
 Antonia Ruzic,404
+Alycia Parks,396
 Marie Bouzkova,379
 Anastasia Zakharova,377
 Emma Raducanu,373
 Sonay Kartal,367
-Alycia Parks,365
 Tereza Valentova,358
 Katerina Siniakova,348
 Ajla Tomljanovic,347
@@ -54,11 +54,13 @@ Anna Blinkova,335
 Camila Osorio,324
 Leylah Fernandez,320
 Nikola Bartunkova,313
+Dayana Yastremska,309
 Maddison Inglis,302
 Taylor Townsend,293
 Naomi Osaka,292
+Anna Bondar,289
+McCartney Kessler,288
 Ann Li,278
-Dayana Yastremska,278
 Lilli Tagger,275
 Oksana Selekhmeteva,273
 Anastasia Potapova,267
@@ -66,9 +68,8 @@ Liudmila Samsonova,267
 Aliaksandra Sasnovich,263
 Storm Hunter,261
 Emma Navarro,261
-Anna Bondar,258
 Daria Kasatkina,257
-McCartney Kessler,257
+Katie Volynets,257
 Linda Fruhvirtova,256
 Gabriela Ruse Elena,256
 Karolina Pliskova,251
@@ -78,7 +79,6 @@ Tamara Korpatsch,247
 Ashlyn Krueger,247
 Paula Badosa,243
 Ella Seidel,229
-Katie Volynets,226
 Victoria Jimenez Kasintseva,222
 Caty McNally,220
 Diane Parry,216
@@ -87,6 +87,7 @@ Kamilla Rakhimova,208
 (1998) Yuan Yue,196
 Alina Charaeva,185
 Taylah Preston,181
+Donna Vekic,180
 Yuliia Starodubtseva,180
 Himeno Sakatsume,178
 Alina Korneeva,177
@@ -97,10 +98,10 @@ Lanlana Tararudee,168
 Barbora Krejcikova,166
 Zhuoxuan Bai,164
 Laura Siegemund,161
+Renata Zarazua,159
 Rebecca Sramkova,158
 Rebeka Masarova,157
 Olga Danilovic,154
-Donna Vekic,148
 Daria Snigur,146
 Solana Sierra,140
 Petra Marcinko,135
@@ -109,12 +110,12 @@ Moyuka Uchijima,133
 Marina Stakusic,132
 Elsa Jacquemot,130
 Elvina Kalieva,128
-Renata Zarazua,128
 Simona Waltert,121
 Dominika Salkova,119
 Mayar Sherif,118
 Joanna Garland,114
 Maja Chwalinska,114
+Tatjana Maria,113
 Francesca Jones,112
 Linda Klimovicova,111
 Vera Zvonareva,111
@@ -124,31 +125,33 @@ Whitney Osuigwe,101
 Dalma Galfi,98
 Polina Kudermetova,96
 Ekaterine Gorgodze,96
+Viktoriya Tomova,93
 Kayla Day,91
 Julia Grabher,88
 Sloane Stephens,87
 Sofia Kenin,85
 Darja Vidmanova,84
-Tatjana Maria,84
 Eva Lys,83
 Sinja Kraus,83
 Emerson Jones,80
 Olivia Gadecki,77
+Akasha Urhobo,77
 Sofia Costoulas,75
 Darja Semenistaja,75
 Nuria Brancaccio,72
 Tamara Zidansek,72
+Panna Udvardy,72
 Lulu Sun,72
 Arina Rodionova,71
 Fiona Ferro,69
 Kaitlin Quevedo,68
 Mary Stoiana,68
+Katarzyna Kawa,65
 Matilde Jorge,64
 Maria Timofeeva,63
 Chloe Paquet,63
 Elena Pridankina,62
 Marketa Vondrousova,61
-Viktoriya Tomova,61
 Polina Iatcenko,56
 Elina Avanesyan,55
 Mia Pohankova,54
@@ -156,14 +159,14 @@ Caroline Dolehide,53
 Beatriz Haddad Maia,53
 Hanyu Guo,51
 Varvara Lepchenko,51
+Julia Riera,50
+Despina Papamichail,50
 Fangran Tian,49
 Mei Yamaguchi,48
 Viktoria Morvayova,48
 Shuo Liang En,47
-Akasha Urhobo,45
 Veronika Erjavec,44
 Francisca Jorge,44
-Panna Udvardy,43
 Marina Bassols Ribera,42
 Youngsuh Lee Carol,42
 Anhelina Kalinina,42
@@ -177,12 +180,12 @@ Kiara Toth Amarissa,37
 Katarina Zavatska,37
 Selena Janicijevic,36
 Lourdes Carle Maria,36
-Katarzyna Kawa,36
 Polona Hercog,34
 Diana Martynov,33
 Venus Williams,33
 Leolia Jeanjean,33
 Anastasia Pavlyuchenkova,32
+Julieta Pareja,32
 Elizabeth Mandlik,32
 Lin Zhu,32
 Gabriela Knutson,32
@@ -218,8 +221,6 @@ Sofia Sanchez Ana,21
 Teodora Kostovic,21
 Tatiana Prozorova,21
 Lizette Cabrera,21
-Julia Riera,21
-Despina Papamichail,21
 Mai Hontama,21
 Silvia Ambrosio,20
 Nadine Smith Tina,20
@@ -228,9 +229,9 @@ Lina Gjorcheska,20
 Elena Micic,20
 Harmony Tan,20
 Anouk Koevermans,20
-Justina Mikulskyte,20
 (Kuzmova) Hruncakova Viktoria,20
 Harriet Dart,20
+Justina Mikulskyte,20
 Irene Burillo Escorihuela,20
 Kathinka von Deichmann,20
 Anastasia Tikhonova,19
@@ -267,8 +268,8 @@ Kristina Mladenovic,15
 Eri Shimizu,15
 Sohyun Park,15
 Aliona Bolsova Zadoinov,15
-Tena Lukas,15
 Nao Hibino,15
+Tena Lukas,15
 Leyre Romero Gormaz,15
 Katarzyna Piter,14
 Yeonwoo Ku,14
@@ -317,15 +318,15 @@ Alana Smith,4
 Sara Daavettila,4
 Ankita Raina,4
 Nadiya Kolb,4
-Victoria Hu,4
 Anastasia Kulikova,4
 Martina Colmegna,4
 Sachia Vickery,4
-Barbora Palicova,4
-Marie Dittmann Gina,4
+Victoria Hu,4
 Elena Cabezas Dominguez Sofia,4
 Jule Niemeier,4
 Sada Nahimana,4
+Barbora Palicova,4
+Marie Dittmann Gina,4
 Alice Rame,4
 Jessika Ponchet,4
 Tahlia Kokkinis,3
@@ -340,7 +341,6 @@ Ada Kumru,3
 Mingge Xu,3
 Laura Samson,3
 Emily Appleton,3
-Julieta Pareja,3
 Alana Subasic,3
 Bernarda Pera,2
 Ksenia Efremova,2
@@ -352,16 +352,16 @@ Sara Lanca,2
 Hiroko Kuwata,2
 Martina Capurro Taborda,2
 Valeriya Strakhova,2
-Ekaterina Yashina,2
 Luisina Giovannini,2
 Katrina Scott,2
 Jessica Pieri,2
+Ekaterina Yashina,2
 Erika Andreeva,2
-Sinclair Rogers Anna,2
 Alice Tubello,2
 Ayla Aksu,2
 Sara Saito,2
 Sarah Rokusek,2
+Sinclair Rogers Anna,2
 Anastasiia Sobolieva,2
 Tiphanie Lemaitre,2
 Georgiana Serban Raluca,2
@@ -389,12 +389,12 @@ Kanon Sawashiro,1
 Julie Pastikova,1
 Isabel Higuita Barraza Mariana,1
 Malaika Rapolu,1
-Carson Tanguilig,1
 Selina Atay,1
 Maitane Arconada Usue,1
 Mary Lewis,1
 Ana Konjuh,1
 Maaya Rajeshwaran Revathi,1
+Carson Tanguilig,1
 Elizabeth Coleman,1
 Ekaterina Ovcharenko,1
 Saumya Vig,1
@@ -402,7 +402,6 @@ Sonal Patil,1
 Aoi Ito,1
 Elyse Tse,1
 Nahia Berecoechea,1
-Denislava Glushkova,1
 Ikumi Yamazaki,1
 Dileep Nitture Akanksha,1
 Zeel Desai,1
@@ -412,12 +411,12 @@ Ava Beck,1
 Defne Cirpanli,1
 Camila Torres Murcia Maria,1
 Vaidehi Chaudhari,1
+Denislava Glushkova,1
 Gabriella da Silva Fick,1
 Katie Swan,1
 Hanna Chang,1
 Jamie Loeb,1
 Irem Kurt,1
-Gina Feistel,1
 Ruxandra Bertea Elena,1
 Yaroslava Bartashevich,1
 Briana Szabo,1
@@ -428,61 +427,60 @@ Alicia Herrero Linana,1
 Ylena In-Albon,1
 Gabriela Ce,1
 Laquisa Khan,1
+Gina Feistel,1
 Lucie Havlickova,1
 Diletta Cherubini,1
 Ilay Yoruk,1
 Tatiana Pieri,1
-Victoria Rodriguez,1
 Sofia Shapatava,1
 Valentina Mediorreal Arias,1
 Alicia Dudeney,1
 Haley Giavara,1
+Victoria Rodriguez,1
 Carolina Alves,1
 Isabella Shinikova,1
 Angela Fita Boluda,1
 Kajsa Rinaldo Persson,1
 Bruna Liotto de Carvalho,0
+Lucrezia Musetti,0
 Pilar Beveraggi Lespiau,0
-Monika Stankiewicz,0
 Abhilasha Bista,0
 Ailin Larraya Guidi Sol,0
 Saoirse Breen,0
 Amelia Honer,0
-Elsa Wan,0
-Prathyusha Rachapudi,0
-Elena Jamshidi,0
+Kailey Evans,0
 Zhibek Kulambayeva,0
 Abril Bruno Valentina,0
 Aurora Nosei,0
 Rianna Alame,0
-Marjorie Souza,0
+Chukwumelije Clarke,0
 Anna Kartseva,0
 Giovana Schincariol Delatorre Barbosa,0
 Luisa Schruff,0
 Camila Rodero,0
-Luiza Barros Victoria,0
 Natalia Sousa Salazar,0
 Luna Vujovic,0
+Tamara Sramkova,0
 Laura Badia,0
 Paola Lopez,0
 Stefaniya Pushkar,0
+Monika Stankiewicz,0
 Cara Korhonen,0
 Angela Cui,0
-Shannon Lam,0
 Alessia Monteleone Giulia,0
-Singh Rao Sandeepti,0
 Phillippa Preugschat,0
+Elsa Wan,0
+Julie Struplova,0
 Pooja Ingale,0
 Romina Ccuno,0
-Melissa Boyden,0
+Prathyusha Rachapudi,0
 Kateryna Diatlova,0
 Hina Inoue,0
 Maria Maruca Melina,0
 Geraldine Gerald Gonzalez Jimar,0
-Julia Konishi Camargo Silva,0
+Elena Jamshidi,0
 Zoziya Kardava,0
 Rosa Dourado Zimermman Jennifer,0
-Garbiela Vasilescu Arina,0
 Rebeca Pereira,0
 Ksenia Laskutova,0
 Mariam Bolkvadze,0
@@ -494,7 +492,9 @@ Laxmisiri Dandu,0
 Gala Ivanovic,0
 Camila Markus,0
 Kristina Belkova,0
+Marjorie Souza,0
 Juliana Giaccio,0
+Luiza Barros Victoria,0
 Valeriia Artemeva,0
 Varvara Panshina,0
 Anna Tabunshchyk,0
