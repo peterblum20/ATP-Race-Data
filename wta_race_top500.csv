@@ -1,7 +1,7 @@
 Player,Points
 Aryna Sabalenka,3800
 Elena Rybakina,3483
-Jessica Pegula,2513
+Jessica Pegula,2600
 Elina Svitolina,2255
 Karolina Muchova,1945
 Victoria Mboko,1927
@@ -9,8 +9,9 @@ Coco Gauff,1695
 Mirra Andreeva,1368
 Belinda Bencic,1187
 Amanda Anisimova,1130
-Iva Jovic,1024
+Iva Jovic,1111
 Iga Swiatek,1020
+Madison Keys,781
 Cristina Bucsa,771
 Sorana Cirstea,764
 Anna Kalinskaya,739
@@ -20,7 +21,6 @@ Alexandra Eala,711
 Elise Mertens,705
 Sara Bejlek,700
 Elisabetta Cocciaretto,698
-Madison Keys,694
 Kimberly Birrell,678
 Maria Sakkari,658
 Diana Shnaider,643
@@ -36,14 +36,15 @@ Yulia Putintseva,527
 Ekaterina Alexandrova,491
 Jaqueline Cristian,489
 Katie Boulter,484
+Marie Bouzkova,476
 Talia Gibson,468
 Marta Kostyuk,465
-Marie Bouzkova,432
 Zeynep Sonmez,412
 Antonia Ruzic,404
 Alycia Parks,396
 Leylah Fernandez,380
 Anastasia Zakharova,377
+Yuliia Starodubtseva,374
 Emma Raducanu,373
 Sonay Kartal,367
 McCartney Kessler,364
@@ -61,7 +62,6 @@ Maddison Inglis,302
 Paula Badosa,302
 Taylor Townsend,293
 Naomi Osaka,292
-Yuliia Starodubtseva,287
 Ann Li,278
 Ashlyn Krueger,278
 Lilli Tagger,275
@@ -79,6 +79,7 @@ Karolina Pliskova,251
 Qinwen Zheng,250
 Maya Joint,248
 Tamara Korpatsch,247
+Emiliana Arango,231
 Ella Seidel,229
 Victoria Jimenez Kasintseva,222
 Caty McNally,220
@@ -87,7 +88,6 @@ Diane Parry,216
 Andrea Lazaro Garcia,208
 Kamilla Rakhimova,208
 Jessica Bouzas Maneiro,198
-Emiliana Arango,187
 Renata Zarazua,187
 Alina Charaeva,185
 Taylah Preston,181
@@ -105,7 +105,9 @@ Rebeka Masarova,157
 Olga Danilovic,154
 Daria Snigur,146
 Sofia Kenin,145
+Panna Udvardy,140
 Solana Sierra,140
+Jasmin Ortenzi,136
 Petra Marcinko,135
 Moyuka Uchijima,133
 Marina Stakusic,132
@@ -128,9 +130,7 @@ Varvara Lepchenko,104
 Kaja Juvan,103
 Whitney Osuigwe,101
 Dalma Galfi,98
-Panna Udvardy,96
 Viktoriya Tomova,93
-Jasmin Ortenzi,92
 Kayla Day,91
 Katarzyna Kawa,89
 Julia Grabher,88
