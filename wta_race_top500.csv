@@ -1,9 +1,9 @@
 Player,Points
+Elena Rybakina,3808
 Aryna Sabalenka,3800
-Elena Rybakina,3678
 Jessica Pegula,2905
 Elina Svitolina,2450
-Karolina Muchova,2140
+Karolina Muchova,2270
 Mirra Andreeva,2063
 Victoria Mboko,1927
 Coco Gauff,1803
@@ -23,6 +23,7 @@ Elisabetta Cocciaretto,728
 Diana Shnaider,703
 Sara Bejlek,700
 Kimberly Birrell,678
+Marta Kostyuk,628
 Marie Bouzkova,628
 Hailey Baptiste,628
 Maria Sakkari,627
@@ -32,7 +33,6 @@ Peyton Stearns,611
 Anastasia Potapova,592
 Janice Tjen,589
 Magdalena Frech,583
-Marta Kostyuk,563
 Jasmine Paolini,563
 Magda Linette,558
 Ekaterina Alexandrova,552
@@ -92,6 +92,7 @@ Tatjana Maria,212
 Andrea Lazaro Garcia,209
 Panna Udvardy,206
 Jessica Bouzas Maneiro,198
+Maja Chwalinska,195
 Alina Korneeva,192
 Renata Zarazua,187
 Alina Charaeva,186
@@ -104,8 +105,9 @@ Priscilla Hon,171
 Viktorija Golubic,171
 Lanlana Tararudee,168
 Barbora Krejcikova,166
+Sinja Kraus,165
 Zhuoxuan Bai,164
-Maja Chwalinska,163
+Veronika Podrez,163
 Dominika Salkova,162
 Dalma Galfi,158
 Darja Semenistaja,155
@@ -120,11 +122,10 @@ Oleksandra Oliynykova,139
 Jasmin Ortenzi,136
 Moyuka Uchijima,134
 Lisa Pigato,133
-Sinja Kraus,133
 Marina Stakusic,132
 Elsa Jacquemot,131
-Polina Kudermetova,128
 Elvina Kalieva,128
+Polina Kudermetova,128
 Vera Zvonareva,124
 Mayar Sherif,120
 Whitney Osuigwe,116
@@ -136,7 +137,6 @@ Viktoriya Tomova,106
 Varvara Lepchenko,104
 Kaja Juvan,103
 Iryna Shymanovich,99
-Veronika Podrez,98
 Kayla Day,91
 Katarzyna Kawa,90
 Julia Grabher,89
@@ -197,8 +197,8 @@ Lin Zhu,32
 Elizabeth Mandlik,32
 Harmony Tan,32
 Hanne Vandewinkel,32
-Caroline Werner,32
 Lucia Bronzetti,32
+Caroline Werner,32
 Lia Karatancheva,31
 Eudice Chong,30
 Yafan Wang,30
@@ -209,8 +209,8 @@ Oceane Dodin,30
 Mananchaya Sawangkaew,30
 Wushuang Zheng,30
 Sara Sorribes Tormo,30
-Mia Ristic,30
 Anastasia Gasanova,30
+Mia Ristic,30
 Cadence Brace,28
 Anna Frey,27
 Sakura Hosogi,27
@@ -223,8 +223,8 @@ Lola Radivojevic,23
 Jennifer Brady,22
 Teodora Kostovic,22
 Misaki Matsuda,21
-Johanna Brockmann Tessa,21
 Anastasia Zolotareva,21
+Johanna Brockmann Tessa,21
 Tatiana Prozorova,21
 Lizette Cabrera,21
 Sofia Sanchez Ana,21
@@ -442,11 +442,11 @@ Gabriela Ce,1
 Laquisa Khan,1
 Irem Kurt,1
 Defne Cirpanli,1
-Lucie Havlickova,1
 Ilay Yoruk,1
 Hanna Chang,1
 Eva Bennemann,1
 Gina Feistel,1
+Lucie Havlickova,1
 Darya Astakhova,1
 Diletta Cherubini,1
 Haley Giavara,1
@@ -457,8 +457,8 @@ Sofia Shapatava,1
 Valentina Mediorreal Arias,1
 Briana Szabo,1
 Alicia Dudeney,1
-Lea Boskovic,1
 Tatiana Pieri,1
+Lea Boskovic,1
 Kajsa Rinaldo Persson,1
 Isabella Shinikova,1
 Angela Fita Boluda,1
