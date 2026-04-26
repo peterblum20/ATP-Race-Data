@@ -1,23 +1,23 @@
 Player,Points
 Jannik Sinner,3950
 Carlos Alcaraz,3650
-Alexander Zverev,2300
-Daniil Medvedev,1720
+Alexander Zverev,2340
+Daniil Medvedev,1760
 Ben Shelton,1570
 Arthur Fils,1530
 Novak Djokovic,1400
 Alex de Minaur,1305
-Felix Auger-Aliassime,1175
+Felix Auger-Aliassime,1215
+Flavio Cobolli,1120
 Tomas Martin Etcheverry,1085
-Flavio Cobolli,1080
+Francisco Cerundolo,1050
 Jiri Lehecka,1045
 Tommy Paul,1025
-Francisco Cerundolo,1010
 Andrey Rublev,1010
 Alexander Bublik,970
 Frances Tiafoe,955
-Jakub Mensik,905
-Luciano Darderi,855
+Jakub Mensik,945
+Luciano Darderi,895
 Rafael Jodar,819
 Valentin Vacherot,810
 Learner Tien,795
@@ -31,26 +31,27 @@ Tomas Machac,610
 Brandon Nakashima,595
 Sebastian Korda,590
 Mariano Navone,569
+Casper Ruud,565
 Vit Kopriva,550
 Tallon Griekspoor,550
 Joao Fonseca,540
-Casper Ruud,525
+Alejandro Davidovich Fokina,510
+Alexander Blockx,505
 Ethan Quinn,503
 Hamad Medjedovic,501
 Fabian Marozsan,500
 Alex Michelsen,485
-Alexander Blockx,485
-Alejandro Davidovich Fokina,470
+Adolfo Daniel Vallejo,469
 Marin Cilic,465
 Hubert Hurkacz,465
-Adolfo Daniel Vallejo,449
 Roman Andres Burruchaga,447
+Stefanos Tsitsipas,445
+Daniel Merida,437
 Zizou Bergs,435
 Denis Shapovalov,430
-Stefanos Tsitsipas,425
 Camilo Ugo Carabelli,425
+Karen Khachanov,420
 Miomir Kecmanovic,420
-Daniel Merida,417
 Botic van de Zandschulp,415
 Raphael Collignon,408
 Quentin Halys,403
@@ -58,7 +59,6 @@ Thiago Agustin Tirante,398
 Luca Van Assche,391
 Yannick Hanfmann,389
 Rinky Hijikata,385
-Karen Khachanov,380
 Marcos Giron,375
 James Duckworth,374
 Corentin Moutet,370
@@ -66,8 +66,8 @@ Ignacio Buse,370
 Marco Trungelliti,361
 Nuno Borges,360
 Arthur Rinderknech,360
+Terence Atmane,352
 Mattia Bellucci,352
-Terence Atmane,332
 Jaime Faria,327
 Yibing Wu,322
 Alex Molcan,316
@@ -128,14 +128,17 @@ Christopher O'Connell,192
 Michael Mmoh,191
 Reilly Opelka,190
 Joel Schwaerzler,190
+Nishesh Basavareddy,189
 Stefano Travaglia,188
 Facundo Diaz Acosta,188
+Nicolai Budkov Kjaer,187
 Gabriel Diallo,185
 Jenson Brooksby,185
 Liam Broady,181
 Leandro Riedi,180
 Francisco Comesana,178
 Clement Tabur,178
+Dalibor Svrcina,174
 Lloyd Harris,174
 Dusan Lajovic,173
 Stefan Dostanic,173
@@ -143,8 +146,6 @@ Felix Gill,173
 Clement Chidekh,170
 Stefanos Sakellaridis,169
 Roman Safiullin,168
-Nicolai Budkov Kjaer,167
-Nishesh Basavareddy,167
 Tomas Barrios Vera,166
 Lautaro Midon,166
 Rio Noguchi,162
@@ -157,7 +158,6 @@ Stefan Kozlov,156
 Raul Brancaccio,155
 Patrick Kypson,153
 Pol Martin Tiffon,153
-Dalibor Svrcina,152
 Stefano Napolitano,150
 Timofey Skatov,150
 Max Houkes,147
@@ -175,20 +175,23 @@ Zdenek Kolar,139
 Moise Kouame,138
 Juan Pablo Varillas,138
 Liam Draxl,137
+Soonwoo Kwon,136
 Lorenzo Sonego,135
+Andrea Guerrieri,135
 Nikoloz Basilashvili,132
 Andy Andrade,131
 Mackenzie McDonald,130
+Gauthier Onclin,129
 Gonzalo Bueno,128
 Diego Dedura,128
 Matias Soto,127
 Filip Cristian Jianu,126
 Lukas Neumayer,123
+Sergey Fomin,123
 James McCabe,123
 Facundo Mena,121
 Pedro Boscardin Dias,120
 Juan Pablo Ficovich,118
-Gauthier Onclin,118
 Jay Clarke,117
 Mikhail Kukushkin,117
 Hayato Matsuoka,116
@@ -199,7 +202,6 @@ Charles Broom,114
 Keegan Smith,114
 Luka Pavlovic,113
 Roberto Carballes Baena,113
-Andrea Guerrieri,113
 Michael Geerts,113
 Andrea Pellegrino,112
 Francesco Passaro,112
@@ -211,7 +213,6 @@ Chun-Hsin Tseng,109
 Tung-Lin Wu,108
 Florent Bax,106
 Maks Kasnikowski,106
-Soonwoo Kwon,105
 Alastair Gray,105
 Pierre-Hugues Herbert,104
 Billy Harris,104
@@ -224,8 +225,8 @@ Marek Gengel,101
 Juncheng Shang,100
 Rodrigo Pacheco Mendez,100
 Braden Shick,99
-Sergey Fomin,98
 Colton Smith,97
+Jack Kennedy,97
 Genaro Alberto Olivieri,97
 Igor Marcondes,96
 Tom Gentzsch,96
@@ -272,7 +273,6 @@ Tibo Colson,76
 Mert Alkaya,76
 Hynek Barton,76
 Yasutaka Uchiyama,75
-Jack Kennedy,75
 Edas Butvilas,75
 Alex Barrena,75
 Valerio Aboian,75
@@ -362,6 +362,7 @@ Christian Langmo,51
 Arthur Cazaux,50
 Mees Rottgering,50
 Guy Den Ouden,50
+Hamish Stewart,50
 Marvin Moeller,50
 Kilian Feldbausch,49
 Karim Bennani,49
@@ -429,7 +430,6 @@ Andrew Fenty,40
 Leo Borg,40
 Olaf Pieczkowski,39
 Christoph Negritu,39
-Hamish Stewart,39
 Vadym Ursu,39
 Patrick Zahraj,39
 Moerani Bouzige,39
