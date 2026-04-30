@@ -1,9 +1,9 @@
 Player,Points
-Jannik Sinner,4100
+Jannik Sinner,4300
 Carlos Alcaraz,3650
 Alexander Zverev,2490
+Arthur Fils,1880
 Daniil Medvedev,1810
-Arthur Fils,1680
 Ben Shelton,1570
 Novak Djokovic,1400
 Alex de Minaur,1305
@@ -59,29 +59,29 @@ Thiago Agustin Tirante,398
 Luca Van Assche,391
 Yannick Hanfmann,389
 Marcos Giron,388
-Rinky Hijikata,385
+Rinky Hijikata,386
 James Duckworth,374
 Corentin Moutet,370
 Marco Trungelliti,361
 Nuno Borges,360
 Arthur Rinderknech,360
+Mattia Bellucci,358
+Ignacio Buse,353
 Terence Atmane,352
-Mattia Bellucci,352
-Ignacio Buse,340
 Yibing Wu,335
 Jaime Faria,334
 Matteo Berrettini,328
+Aleksandar Kovacevic,316
 Alex Molcan,316
 Aleksandr Shevchenko,310
 Adrian Mannarino,310
 Martin Landaluce,308
-Aleksandar Kovacevic,303
 Pablo Carreno Busta,303
 Dino Prizmic,298
 Arthur Gea,296
 Borna Gojo,296
+Juan Manuel Cerundolo,292
 Toby Samuel,289
-Juan Manuel Cerundolo,286
 Sebastian Ofner,283
 Zachary Svajda,276
 Dane Sweeny,274
@@ -92,10 +92,10 @@ Titouan Droguet,260
 Cristian Garin,248
 Pedro Martinez,248
 Martin Damm,244
+Alex Bolt,244
 Benjamin Bonzi,241
 Elmer Moller,240
 Rei Sakamoto,239
-Alex Bolt,238
 Vilius Gaubas,235
 Nicolas Mejia,232
 Jaume Munar,230
@@ -104,26 +104,26 @@ Marton Fucsovics,225
 Hugo Dellien,223
 Chris Rodesch,222
 Nishesh Basavareddy,220
+Emilio Nava,220
 Jan-Lennard Struff,218
 Damir Dzumhur,216
 Zsombor Piros,216
 Zhizhen Zhang,215
+Valentin Royer,215
 Alexandre Muller,214
-Emilio Nava,214
 Daniel Altmaier,214
 Eliot Spizzirri,213
 Kamil Majchrzak,212
+Coleman Wong,208
 Gustavo Heide,206
 Giovanni Mpetshi Perricard,205
-Valentin Royer,202
+Michael Mmoh,203
+Adam Walton,201
 Alexei Popyrin,200
 Henrique Rocha,199
 Pablo Llamas Ruiz,197
-Michael Mmoh,197
 Pavel Kotov,196
-Coleman Wong,196
 Daniil Glinka,196
-Adam Walton,195
 Jack Pinnington Jones,195
 Kyrian Jacquet,194
 Christopher O'Connell,192
@@ -134,7 +134,7 @@ Facundo Diaz Acosta,188
 Nicolai Budkov Kjaer,187
 Gabriel Diallo,185
 Jenson Brooksby,185
-Liam Broady,181
+Liam Broady,183
 Dalibor Svrcina,180
 Leandro Riedi,180
 Francisco Comesana,178
@@ -145,75 +145,76 @@ Lloyd Harris,174
 Tomas Barrios Vera,173
 Stefan Dostanic,173
 Felix Gill,173
+Pol Martin Tiffon,172
+Alexis Galarneau,170
 Clement Chidekh,170
+Rio Noguchi,168
+Raul Brancaccio,167
 Lautaro Midon,166
 Andrea Guerrieri,166
-Alexis Galarneau,164
+Gauthier Onclin,166
 Moise Kouame,163
-Rio Noguchi,162
 Arthur Fery,161
 Jurij Rodionov,161
-Raul Brancaccio,161
 Federico Agustin Gomez,160
-Gauthier Onclin,160
-Pol Martin Tiffon,159
+Roberto Bautista Agut,157
 Tristan Schoolkate,157
 Stefan Kozlov,156
+Gianluca Cadenasso,154
 Patrick Kypson,153
+Marco Cecchinato,151
 Stefano Napolitano,150
 Timofey Skatov,150
 Max Houkes,147
 Guido Ivan Justo,146
 Luca Nardi,145
 Ilia Simakin,145
-Marco Cecchinato,145
 Zdenek Kolar,145
-Roberto Bautista Agut,144
-Gianluca Cadenasso,141
 Gael Monfils,140
 Elias Ymer,140
 Juan Carlos Prado Angelo,140
 Harry Wendelken,140
 Juan Pablo Varillas,138
 Liam Draxl,137
+Lukas Neumayer,137
 Soonwoo Kwon,136
 Lorenzo Sonego,135
 Diego Dedura,133
 Nikoloz Basilashvili,132
 Andy Andrade,131
 Mackenzie McDonald,130
-Lukas Neumayer,130
+Darwin Blanch,128
 Gonzalo Bueno,128
 Matias Soto,127
 Filip Cristian Jianu,126
+Andrea Pellegrino,125
 Sergey Fomin,125
 Dusan Lajovic,123
 Jay Clarke,123
 James McCabe,123
-Darwin Blanch,121
 Facundo Mena,121
 Frederico Ferreira Silva,121
+Pierre-Hugues Herbert,120
 Pedro Boscardin Dias,120
 Hayato Matsuoka,119
 Michael Geerts,119
 Juan Pablo Ficovich,118
 Hugo Gaston,117
 Mikhail Kukushkin,117
+Tung-Lin Wu,116
+Keegan Smith,116
 Federico Cina,115
 Charles Broom,114
-Keegan Smith,114
 Roberto Carballes Baena,113
 Luka Pavlovic,113
-Andrea Pellegrino,112
 Francesco Passaro,112
 Alejandro Moro Canas,111
 Remy Bertola,111
 Otto Virtanen,110
-Tung-Lin Wu,110
 Chun-Hsin Tseng,109
 Florent Bax,109
 Maks Kasnikowski,108
-Pierre-Hugues Herbert,107
+Tom Gentzsch,108
 Alastair Gray,105
 Billy Harris,104
 Aleksandar Vukic,103
@@ -221,11 +222,12 @@ Murphy Cassone,103
 Michael Zheng,102
 Thiago Monteiro,102
 Marc-Andrea Huesler,102
-Tom Gentzsch,102
+Kimmer Coppejans,102
 Marek Gengel,101
 Juncheng Shang,100
 Rodrigo Pacheco Mendez,100
 Braden Shick,99
+Fajing Sun,98
 Colton Smith,97
 Jack Kennedy,97
 Genaro Alberto Olivieri,97
@@ -234,21 +236,21 @@ Igor Marcondes,96
 Grigor Dimitrov,95
 Buvaysar Gadamauri,95
 Kaichi Uchida,95
+Mili Poljicak,94
 Michele Ribecai,94
 Filippo Romano,94
 Jonas Forejtek,91
 Juan Estevez,91
-Mili Poljicak,90
 Ugo Blanchet,90
 Blaise Bicknell,90
-Kimmer Coppejans,89
 August Holmgren,89
+Yunchaokete Bu,88
 Joao Lucas Reis Da Silva,88
 Andrea Collarini,87
+Mert Alkaya,87
 Lorenzo Giustino,87
 Philip Henning,87
 Jan Choinski,86
-Fajing Sun,86
 Miguel Damas,86
 Matteo Martineau,85
 Alvaro Guillen Meza,85
@@ -256,23 +258,23 @@ Nikolas Sanchez Izquierdo,85
 Blake Ellis,84
 Juan Manuel La Serna,83
 Franco Roncadelli,83
+Edas Butvilas,83
 Max Alcala Gurri,83
-Yunchaokete Bu,82
 Li Tu,81
+Andrej Nedic,81
 Yu Hsiou Hsu,81
-Mert Alkaya,81
 Carlos Sanchez Jover,81
 Florian Broska,80
 Franco Agamenone,80
 Yosuke Watanuki,79
 Eduardo Ribeiro,79
 Philip Sekulic,79
-Edas Butvilas,79
+Thomas Faurel,79
 Dominic Stricker,78
 Alex Martinez,78
 Thiago Seyboth Wild,77
-Andrej Nedic,77
 Federico Bondioli,77
+Matteo Arnaldi,76
 Tibo Colson,76
 Hynek Barton,76
 Jesper de Jong,75
@@ -294,15 +296,16 @@ Sean Cuenin,71
 Petr Nesterov,71
 Marko Topo,70
 Bernard Tomic,70
+Andre Ilagan,70
 Robin Bertrand,70
 Martin Krumich,69
 Lucio Ratti,68
 Daniel Masur,68
 Colin Sinclair,67
 Max Schoenhaus,67
+Max Hans Rehberg,66
 Juan Bautista Torres,66
 Sascha Gueymard Wayenburg,66
-Thomas Faurel,66
 Jacopo Vasami,65
 Maxim Mrva,65
 Oleg Prihodko,65
@@ -310,16 +313,13 @@ Eliakim Coulibaly,65
 Tai Sach,65
 Enrico Dalla Valle,64
 Dragos Nicolae Madaras,64
-Andre Ilagan,64
 Dali Blanch,64
 Robert Strombachs,64
-Matteo Arnaldi,63
 Andrea Vavassori,63
 Hugo Grenier,63
 Henri Squire,63
 Tyler Zink,63
 Jordan Thompson,62
-Max Hans Rehberg,62
 Lui Maxted,62
 Justin Engel,62
 Maximus Jones,62
@@ -336,9 +336,11 @@ Samuele Pieri,60
 Emile Hudd,60
 Stefan Palosi,59
 Daniel Dutra da Silva,59
+Giles Hussey,59
 Enzo Aguiard,58
 Tommaso Compagnucci,58
 Murkel Dellien,58
+Matthew William Donald,58
 Taro Daniel,57
 Cannon Kingsley,57
 Hamish Stewart,56
@@ -349,7 +351,9 @@ Sandro Kopp,56
 Jerome Kym,55
 Max Basing,55
 Arthur Weber,55
+Calvin Hemery,55
 Ivan Gakhov,55
+Marat Sharipov,55
 Digvijaypratap Singh,55
 Shintaro Mochizuki,54
 Justin Boulais,54
@@ -361,14 +365,13 @@ Marvin Moeller,53
 Yuta Shimizu,53
 Daniel Michalski,53
 Garrett Johns,53
-Giles Hussey,53
 Daniel Siniakov,52
 Anton Shepp,52
 Yi Zhou,52
+Antoine Ghibaudo,52
 Oriol Roca Batalla,52
 Karan Singh,52
 Semen Pankin,51
-Matthew William Donald,51
 Amir Omarkhanov,51
 Christian Langmo,51
 Arthur Cazaux,50
@@ -380,17 +383,16 @@ Arthur Nagel,50
 Alexander Binda,50
 Georgii Kravchenko,50
 Andrey Chepelev,50
+Laslo Djere,49
 Kilian Feldbausch,49
 Cezar Cretu,49
-Calvin Hemery,49
 Marc Polmans,49
+Mark Lajal,49
 Maxime Chazal,49
-Marat Sharipov,49
 Ivan Marrero Curbelo,48
 Adrian Boitan,48
 Gavin Young,48
 Dan Added,48
-Antoine Ghibaudo,48
 Fares Zakaria,48
 Daniel Milavsky,48
 Duncan Chan,47
@@ -407,6 +409,7 @@ Anton Matusevich,46
 Pedro Sakamoto,46
 Petr Bar Biryukov,46
 Matthew Dellavedova,46
+Rudolf Molleker,45
 Yaroslav Demin,45
 David Jorda Sanchis,45
 Daniel Elahi Galan,44
@@ -417,10 +420,8 @@ Sergio Callejon Hernando,44
 Jack Loge,44
 Lilian Marmousez,43
 Nerman Fatic,43
-Mark Lajal,43
 Samuel Vincent Ruggeri,43
 Gonzalo Villanueva,43
-Laslo Djere,42
 Luca Castelnuovo,42
 Sebastian Sorger,42
 Karlis Ozolins,42
@@ -448,7 +449,6 @@ Izan Almazan Valiente,40
 Leo Borg,40
 Olaf Pieczkowski,39
 Christoph Negritu,39
-Rudolf Molleker,39
 Patrick Zahraj,39
 Moerani Bouzige,39
 Cedrik-Marcel Stebe,38
