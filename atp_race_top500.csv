@@ -1,80 +1,81 @@
 Player,Points
-Jannik Sinner,5960
+Jannik Sinner,6000
 Alexander Zverev,5250
 Carlos Alcaraz,3650
 Flavio Cobolli,2630
-Daniil Medvedev,2430
+Daniil Medvedev,2470
 Ben Shelton,2030
 Arthur Fils,1900
+Tommy Paul,1885
 Alex de Minaur,1880
 Jakub Mensik,1865
-Tommy Paul,1845
-Felix Auger-Aliassime,1800
+Felix Auger-Aliassime,1840
 Francisco Cerundolo,1760
 Frances Tiafoe,1740
 Casper Ruud,1675
-Rafael Jodar,1579
-Novak Djokovic,1520
+Rafael Jodar,1619
+Novak Djokovic,1560
 Luciano Darderi,1485
 Andrey Rublev,1420
 Jiri Lehecka,1415
-Learner Tien,1305
+Learner Tien,1345
 Taylor Fritz,1280
 Alexander Bublik,1240
 Tomas Martin Etcheverry,1205
 Ugo Humbert,1175
 Matteo Arnaldi,1111
+Ignacio Buse,1075
 Alejandro Tabilo,1065
-Ignacio Buse,1035
-Alejandro Davidovich Fokina,1020
+Alejandro Davidovich Fokina,1060
+Joao Fonseca,1000
 Alexander Blockx,965
-Joao Fonseca,960
 Brandon Nakashima,945
 Lorenzo Musetti,885
 Valentin Vacherot,860
 Mariano Navone,844
+Ethan Quinn,821
 Zizou Bergs,820
 Sebastian Baez,815
-Ethan Quinn,781
 Karen Khachanov,780
 Matteo Berrettini,773
 Raphael Collignon,748
 Vit Kopriva,733
 Juan Manuel Cerundolo,730
 Miomir Kecmanovic,725
+Hubert Hurkacz,715
 Hamad Medjedovic,711
+Fabian Marozsan,710
 Cameron Norrie,690
 Tomas Machac,690
 Martin Landaluce,678
-Hubert Hurkacz,675
-Fabian Marozsan,670
+Nuno Borges,670
 Alex Michelsen,655
 Tallon Griekspoor,655
 Thiago Agustin Tirante,633
-Nuno Borges,630
+Stefanos Tsitsipas,630
 Camilo Ugo Carabelli,620
 Adolfo Daniel Vallejo,619
+Pablo Carreno Busta,608
 Quentin Halys,600
-Stefanos Tsitsipas,590
 Sebastian Korda,590
+Daniel Merida,585
 Daniel Altmaier,582
 Roman Andres Burruchaga,580
 Aleksandar Kovacevic,577
 Luca Van Assche,577
 Jaime Faria,576
+Botic van de Zandschulp,575
 Yannick Hanfmann,575
 Rinky Hijikata,569
-Pablo Carreno Busta,568
 Marin Cilic,565
-Daniel Merida,545
 Zachary Svajda,536
-Botic van de Zandschulp,535
 Mattia Bellucci,533
+Dino Prizmic,518
 Kamil Majchrzak,517
+Arthur Rinderknech,510
 Denis Shapovalov,510
 Adrian Mannarino,490
-Dino Prizmic,478
-Arthur Rinderknech,470
+Sebastian Ofner,467
 Marcos Giron,461
 James Duckworth,459
 Marco Trungelliti,459
@@ -83,14 +84,15 @@ Terence Atmane,452
 Corentin Moutet,450
 Adam Walton,449
 Toby Samuel,446
-Sebastian Ofner,427
 Alex Molcan,422
 Jesper de Jong,418
+Roman Safiullin,418
 Yibing Wu,415
 Yunchaokete Bu,402
 Aleksandr Shevchenko,397
 Facundo Diaz Acosta,393
-Roman Safiullin,378
+Jan-Lennard Struff,391
+Martin Damm,391
 Jack Draper,370
 Gustavo Heide,366
 Dane Sweeny,363
@@ -98,8 +100,6 @@ Sho Shimabukuro,361
 Jaume Munar,360
 Giovanni Mpetshi Perricard,355
 Benjamin Bonzi,353
-Jan-Lennard Struff,351
-Martin Damm,351
 Arthur Fery,348
 Francisco Comesana,346
 Arthur Gea,345
@@ -107,11 +107,15 @@ Henrique Rocha,340
 Pablo Llamas Ruiz,339
 Zhizhen Zhang,334
 Christopher O'Connell,333
+Jenson Brooksby,330
 Damir Dzumhur,329
 Andrea Pellegrino,328
+Nicolas Mejia,324
 Titouan Droguet,321
+Marton Fucsovics,320
 Alexei Popyrin,320
 Borna Gojo,320
+Soonwoo Kwon,319
 Stefanos Sakellaridis,315
 Stan Wawrinka,310
 Vilius Gaubas,308
@@ -120,14 +124,10 @@ Coleman Wong,305
 Hugo Dellien,298
 Nishesh Basavareddy,296
 Kyrian Jacquet,296
-Jenson Brooksby,290
 Valentin Royer,286
-Nicolas Mejia,284
 Zsombor Piros,282
 Rei Sakamoto,281
 Alex Bolt,281
-Marton Fucsovics,280
-Soonwoo Kwon,279
 Michael Mmoh,279
 Otto Virtanen,278
 Pedro Martinez,278
@@ -156,6 +156,7 @@ Leandro Riedi,227
 Andrea Guerrieri,225
 Zdenek Kolar,225
 Eliot Spizzirri,223
+Michael Zheng,222
 Max Alcala Gurri,222
 Laslo Djere,221
 Clement Tabur,221
@@ -190,7 +191,6 @@ Juan Carlos Prado Angelo,186
 Buvaysar Gadamauri,186
 Jacob Fearnley,185
 Elias Ymer,184
-Michael Zheng,182
 Lloyd Harris,182
 Felix Balshaw,182
 Stefan Dostanic,181
@@ -226,6 +226,7 @@ Tom Gentzsch,155
 Alejandro Moro Canas,153
 Inaki Montes-De La Torre,152
 Filip Cristian Jianu,152
+Shintaro Mochizuki,150
 Andre Ilagan,147
 Andy Andrade,147
 Dali Blanch,147
@@ -283,7 +284,6 @@ Jack Kennedy,111
 Francesco Forti,111
 Marek Gengel,111
 Bernard Tomic,111
-Shintaro Mochizuki,110
 Oliver Crawford,110
 Maxim Mrva,110
 Mark Lajal,109
