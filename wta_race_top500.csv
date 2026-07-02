@@ -1,30 +1,30 @@
 Player,Points
 Mirra Andreeva,4999
-Aryna Sabalenka,4775
+Aryna Sabalenka,4835
 Elena Rybakina,4567
 Elina Svitolina,4116
-Jessica Pegula,3590
-Karolina Muchova,3040
-Coco Gauff,2774
+Jessica Pegula,3650
+Karolina Muchova,3100
+Coco Gauff,2834
 Marta Kostyuk,2565
 Victoria Mboko,2393
 Sorana Cirstea,1985
 Iga Swiatek,1894
+Iva Jovic,1752
 Linda Noskova,1744
-Iva Jovic,1692
+Belinda Bencic,1742
 Diana Shnaider,1685
-Belinda Bencic,1682
 Madison Keys,1514
+Anna Kalinskaya,1490
 Maja Chwalinska,1464
 Amanda Anisimova,1438
 Anastasia Potapova,1433
-Anna Kalinskaya,1430
-Jelena Ostapenko,1344
+Jelena Ostapenko,1404
 Marie Bouzkova,1266
 Elise Mertens,1240
+Naomi Osaka,1227
 Alexandra Eala,1209
 Emma Navarro,1183
-Naomi Osaka,1167
 Hailey Baptiste,1153
 Donna Vekic,996
 Karolina Pliskova,990
@@ -33,6 +33,7 @@ Leylah Fernandez,903
 Peyton Stearns,893
 Kimberly Birrell,891
 Maria Sakkari,875
+Ekaterina Alexandrova,872
 Jaqueline Cristian,870
 Katie Boulter,860
 Zeynep Sonmez,851
@@ -41,26 +42,25 @@ Jasmine Paolini,834
 Elisabetta Cocciaretto,824
 Sara Bejlek,823
 Ann Li,818
-Ekaterina Alexandrova,812
 Cristina Bucsa,802
 Gabriela Ruse Elena,800
 Yuliia Starodubtseva,770
 Clara Tauson,768
 Magdalena Frech,757
 Janice Tjen,747
+Nikola Bartunkova,722
 Alycia Parks,720
 Emma Raducanu,709
 Diane Parry,689
 Caty McNally,683
 Katerina Siniakova,675
+Daria Kasatkina,674
 Tatjana Maria,668
 Yulia Putintseva,666
-Nikola Bartunkova,662
 Camila Osorio,645
 Shuai Zhang,641
 Antonia Ruzic,635
 McCartney Kessler,620
-Daria Kasatkina,614
 Talia Gibson,614
 Liudmila Samsonova,601
 Anna Bondar,588
@@ -71,15 +71,15 @@ Ajla Tomljanovic,544
 Anna Blinkova,533
 Dayana Yastremska,529
 Tamara Korpatsch,526
+Jessica Bouzas Maneiro,522
 Kamilla Rakhimova,520
+Barbora Krejcikova,505
 Anastasia Zakharova,504
 Katie Volynets,499
 Qinwen Zheng,491
 Tereza Valentova,478
 Panna Udvardy,475
 Anhelina Kalinina,466
-Jessica Bouzas Maneiro,462
-Barbora Krejcikova,445
 Daria Snigur,443
 Oleksandra Oliynykova,440
 Ashlyn Krueger,440
@@ -97,6 +97,7 @@ Robin Montgomery,339
 Varvara Gracheva,337
 Maddison Inglis,331
 Eva Lys,330
+Claire Liu,320
 Storm Hunter,314
 Linda Fruhvirtova,302
 Xiyu Wang,301
@@ -108,7 +109,6 @@ Simona Waltert,273
 Ella Seidel,267
 Victoria Jimenez Kasintseva,266
 Andrea Lazaro Garcia,261
-Claire Liu,260
 (1998) Yuan Yue,254
 Renata Zarazua,249
 Elsa Jacquemot,246
@@ -125,6 +125,7 @@ Julia Grabher,217
 Caterina Grant Tyra,210
 Sloane Stephens,208
 Veronika Podrez,203
+Mananchaya Sawangkaew,200
 Elvina Kalieva,198
 Francesca Jones,196
 Zhuoxuan Bai,184
@@ -142,7 +143,6 @@ Joanna Garland,148
 Vera Zvonareva,142
 Anastasia Gasanova,142
 Katarzyna Kawa,141
-Mananchaya Sawangkaew,140
 Mayar Sherif,136
 Kayla Day,133
 Marina Stakusic,132
@@ -359,9 +359,9 @@ Ekaterina Kazionova,13
 Alisa Oktiabreva,12
 Amy Zhu,12
 Deborah Chiesa,12
-Sofia Johnson,12
 Thasaporn Naklo,12
 Alana Smith,12
+Sofia Johnson,12
 Madelyn Nugroho Priska,12
 Vaishnavi Adkar,12
 Miho Kuramochi,12
