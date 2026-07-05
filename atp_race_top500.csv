@@ -1,12 +1,12 @@
 Player,Points
 Jannik Sinner,6150
-Alexander Zverev,5340
+Alexander Zverev,5440
 Carlos Alcaraz,3650
-Flavio Cobolli,2720
+Flavio Cobolli,2820
 Daniil Medvedev,2520
+Alex de Minaur,2070
 Ben Shelton,2030
 Felix Auger-Aliassime,1990
-Alex de Minaur,1970
 Arthur Fils,1940
 Tommy Paul,1935
 Jakub Mensik,1905
@@ -15,12 +15,12 @@ Francisco Cerundolo,1760
 Novak Djokovic,1710
 Casper Ruud,1675
 Rafael Jodar,1669
-Jiri Lehecka,1505
+Jiri Lehecka,1605
 Luciano Darderi,1485
+Taylor Fritz,1470
+Alexander Bublik,1430
 Andrey Rublev,1420
-Taylor Fritz,1370
 Learner Tien,1345
-Alexander Bublik,1330
 Alejandro Davidovich Fokina,1210
 Tomas Martin Etcheverry,1205
 Ugo Humbert,1175
@@ -73,6 +73,7 @@ Marin Cilic,565
 Arthur Rinderknech,560
 Kamil Majchrzak,557
 Marcos Giron,551
+Arthur Fery,548
 Jan-Lennard Struff,541
 Mattia Bellucci,533
 Adrian Mannarino,530
@@ -88,10 +89,9 @@ Terence Atmane,452
 Jaume Munar,450
 Corentin Moutet,450
 Adam Walton,449
-Arthur Fery,448
 Toby Samuel,446
+Facundo Diaz Acosta,433
 Yibing Wu,415
-Facundo Diaz Acosta,411
 Yunchaokete Bu,402
 Aleksandr Shevchenko,397
 Martin Damm,391
@@ -102,6 +102,7 @@ Jack Draper,370
 Dane Sweeny,363
 Sho Shimabukuro,361
 Francisco Comesana,358
+Grigor Dimitrov,357
 Giovanni Mpetshi Perricard,355
 Benjamin Bonzi,353
 Pablo Llamas Ruiz,349
@@ -120,6 +121,7 @@ Alexei Popyrin,320
 Borna Gojo,320
 Soonwoo Kwon,319
 Otto Virtanen,318
+Zsombor Piros,318
 Stefanos Sakellaridis,315
 Stan Wawrinka,310
 Vilius Gaubas,308
@@ -129,7 +131,6 @@ Coleman Wong,305
 Shintaro Mochizuki,300
 Hugo Dellien,298
 Nishesh Basavareddy,296
-Zsombor Piros,296
 Gabriel Diallo,295
 Michael Mmoh,285
 Alex Bolt,281
@@ -142,9 +143,9 @@ Dalibor Svrcina,273
 Michael Zheng,272
 Rei Sakamoto,271
 Moise Kouame,263
-Grigor Dimitrov,257
 Lukas Neumayer,253
 Jurij Rodionov,252
+Marco Cecchinato,249
 Pol Martin Tiffon,245
 Alexandre Muller,244
 Chris Rodesch,242
@@ -155,9 +156,9 @@ Jack Pinnington Jones,235
 Roberto Bautista Agut,233
 Patrick Kypson,233
 Federico Cina,232
+Keegan Smith,229
 Nicolai Budkov Kjaer,227
 Leandro Riedi,227
-Marco Cecchinato,227
 Stefano Travaglia,226
 Andrea Guerrieri,225
 Zdenek Kolar,225
@@ -175,7 +176,6 @@ Timofey Skatov,211
 Joel Schwaerzler,210
 Nikolas Sanchez Izquierdo,210
 Pavel Kotov,207
-Keegan Smith,207
 Guido Ivan Justo,206
 Roberto Carballes Baena,205
 Felix Gill,204
@@ -189,6 +189,7 @@ Taro Daniel,193
 Tristan Boyer,190
 Tristan Schoolkate,189
 Rio Noguchi,189
+Braden Shick,187
 Mackenzie McDonald,186
 Juan Carlos Prado Angelo,186
 Buvaysar Gadamauri,186
@@ -213,7 +214,6 @@ Jay Clarke,169
 Franco Roncadelli,168
 Liam Draxl,167
 Kimmer Coppejans,165
-Braden Shick,165
 Stefan Kozlov,163
 Alastair Gray,163
 Maks Kasnikowski,163
@@ -230,6 +230,7 @@ Tom Gentzsch,155
 Alejandro Moro Canas,153
 Filip Cristian Jianu,152
 Ilia Simakin,149
+Kilian Feldbausch,147
 Andre Ilagan,147
 Andy Andrade,147
 Dali Blanch,147
@@ -248,7 +249,6 @@ Thiago Seyboth Wild,139
 Luciano Emanuel Ambrogi,139
 Sergey Fomin,138
 Edas Butvilas,137
-Kilian Feldbausch,136
 Genaro Alberto Olivieri,136
 Max Schoenhaus,136
 Pedro Boscardin Dias,135
@@ -296,9 +296,11 @@ Philip Sekulic,106
 Federico Bondioli,106
 Lucio Ratti,105
 Igor Marcondes,104
+Matheus Pucinelli De Almeida,104
 Blaise Bicknell,104
 Petr Bar Biryukov,104
 Anton Matusevich,103
+Marvin Moeller,103
 Gonzalo Villanueva,103
 Ognjen Milic,102
 Carlos Sanchez Jover,102
@@ -329,8 +331,6 @@ Andrea Collarini,95
 Semen Pankin,95
 Kaichi Uchida,95
 Blake Ellis,94
-Matheus Pucinelli De Almeida,93
-Marvin Moeller,92
 Daniel Elahi Galan,91
 Jake Delaney,91
 Andrey Chepelev,91
@@ -341,6 +341,7 @@ Paul Jubb,88
 Marko Topo,87
 Sascha Gueymard Wayenburg,86
 Duje Ajdukovic,86
+Hernan Casanova,85
 Vadym Ursu,85
 Yi Zhou,84
 Max Hans Rehberg,84
@@ -378,7 +379,6 @@ Masamichi Imamura,75
 Daniel Michalski,75
 Tiago Pereira,75
 Luka Mikrut,74
-Hernan Casanova,74
 Beibit Zhukayev,74
 Denis Yevseyev,74
 Alex Marti Pujolras,73
@@ -408,6 +408,7 @@ Oleg Prihodko,67
 Nicolas Kicker,67
 Abdullah Shelbayh,66
 Fausto Tabacco,66
+Timo Legout,65
 Ilya Ivashka,65
 Cannon Kingsley,65
 Matthew William Donald,65
@@ -498,4 +499,3 @@ Sebastian Gima,51
 Arthur Cazaux,50
 Johannus Monday,50
 Khumoyun Sultanov,50
-Taha Baadi,50
