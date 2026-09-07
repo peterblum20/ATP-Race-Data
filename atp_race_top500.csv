@@ -1,12 +1,12 @@
 Player,Points
 Jannik Sinner,7950
 Alexander Zverev,6850
-Carlos Alcaraz,3850
+Carlos Alcaraz,4050
 Flavio Cobolli,3530
-Ben Shelton,3330
+Ben Shelton,3530
 Arthur Fils,3150
+Frances Tiafoe,2930
 Daniil Medvedev,2780
-Frances Tiafoe,2730
 Rafael Jodar,2509
 Taylor Fritz,2480
 Tommy Paul,2385
@@ -27,6 +27,7 @@ Alejandro Tabilo,1465
 Alexander Blockx,1430
 Ignacio Buse,1410
 Arthur Fery,1373
+Alex Michelsen,1335
 Alejandro Davidovich Fokina,1300
 Lorenzo Musetti,1285
 Ugo Humbert,1270
@@ -34,7 +35,6 @@ Matteo Arnaldi,1231
 Joao Fonseca,1200
 Daniel Merida,1177
 Stefanos Tsitsipas,1175
-Alex Michelsen,1135
 Hubert Hurkacz,1120
 Karen Khachanov,1090
 Zizou Bergs,1070
@@ -165,6 +165,7 @@ Timofey Skatov,280
 Moise Kouame,279
 Diego Dedura,276
 Taro Daniel,273
+Felix Balshaw,273
 Daniil Glinka,273
 Clement Tabur,272
 Alexis Galarneau,269
@@ -185,12 +186,13 @@ Federico Agustin Gomez,252
 Juan Pablo Varillas,251
 Chun-Hsin Tseng,250
 Pol Martin Tiffon,249
+Matej Dodig,248
 Braden Shick,248
+Facundo Mena,246
 Nicolai Budkov Kjaer,245
 Colton Smith,244
 David Jorda Sanchis,243
 Liam Draxl,242
-Felix Balshaw,242
 Tristan Boyer,238
 Liam Broady,237
 Nikolas Sanchez Izquierdo,235
@@ -208,12 +210,10 @@ Maxim Mrva,224
 Eliot Spizzirri,223
 Gael Monfils,220
 Felix Gill,219
-Matej Dodig,217
 Andy Andrade,217
 Rio Noguchi,216
 Mackenzie McDonald,215
 Inaki Montes-De La Torre,215
-Facundo Mena,215
 Kimmer Coppejans,214
 Hayato Matsuoka,214
 Roberto Carballes Baena,213
@@ -279,6 +279,7 @@ Federico Bondioli,164
 Florian Broska,163
 Michele Ribecai,163
 Oriol Roca Batalla,162
+Georgii Kravchenko,161
 Oliver Tarvet,159
 Oliver Crawford,158
 Sandro Kopp,158
@@ -311,7 +312,6 @@ Michael Geerts,138
 Andres Martin,138
 Franco Agamenone,138
 Tiago Pereira,137
-Georgii Kravchenko,136
 Alejo Sanchez Quilez,135
 Pedro Boscardin Dias,135
 Laurent Lokoli,134
