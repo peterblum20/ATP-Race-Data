@@ -57,6 +57,7 @@ Raphael Collignon,918
 Jan-Lennard Struff,916
 Fabian Marozsan,850
 Miomir Kecmanovic,843
+Jaume Munar,825
 Ethan Quinn,821
 Arthur Rinderknech,820
 Martin Landaluce,816
@@ -64,7 +65,6 @@ Vit Kopriva,812
 Yannick Hanfmann,810
 Roman Safiullin,807
 Facundo Diaz Acosta,807
-Jaume Munar,800
 Mattia Bellucci,799
 Tallon Griekspoor,775
 Tomas Machac,769
@@ -81,7 +81,7 @@ Camilo Ugo Carabelli,720
 Kamil Majchrzak,715
 Aleksandar Kovacevic,677
 Rinky Hijikata,673
-Kyrian Jacquet,653
+Kyrian Jacquet,659
 Marco Trungelliti,645
 Dino Prizmic,638
 Yunchaokete Bu,638
@@ -96,21 +96,22 @@ Benjamin Bonzi,605
 Michael Zheng,594
 Sebastian Korda,590
 Zsombor Piros,590
+Coleman Wong,581
 Jesper de Jong,575
-Coleman Wong,575
 Lloyd Harris,571
 Yibing Wu,565
 Jenson Brooksby,563
 Aleksandr Shevchenko,553
 Thiago Seyboth Wild,545
+Martin Damm,538
 Hugo Gaston,523
 Jan Choinski,520
-Martin Damm,513
 Nicolas Mejia,509
 Henrique Rocha,507
 Dane Sweeny,503
 Christopher O'Connell,499
 Dalibor Svrcina,494
+Nikoloz Basilashvili,491
 Sebastian Ofner,491
 Hugo Dellien,491
 Corentin Moutet,490
@@ -118,7 +119,6 @@ Gustavo Heide,488
 Valentin Royer,480
 Emilio Nava,477
 Rei Sakamoto,469
-Nikoloz Basilashvili,466
 Pedro Martinez,462
 Lorenzo Sonego,458
 Alexei Popyrin,448
@@ -138,9 +138,9 @@ Pablo Llamas Ruiz,397
 Jurij Rodionov,396
 Vilius Gaubas,396
 Ilia Simakin,393
+Borna Gojo,391
 Andrea Pellegrino,390
 Michael Mmoh,386
-Borna Gojo,385
 Matej Dodig,383
 Clement Chidekh,378
 Giovanni Mpetshi Perricard,375
@@ -327,12 +327,12 @@ Laurent Lokoli,157
 Luciano Emanuel Ambrogi,157
 Daniel Milavsky,155
 Sergey Fomin,155
-Patrick Schoen,152
+Patrick Schoen,154
+Carlo Alberto Caniato,154
 Miguel Damas,152
 Yu Hsiou Hsu,151
 Marko Topo,150
 Ugo Blanchet,150
-Carlo Alberto Caniato,147
 Valerio Aboian,147
 Joaquin Aguilar Cardozo,146
 Timo Legout,145
@@ -485,6 +485,7 @@ Millen Hurrion,87
 Dusan Obradovic,87
 Johannus Monday,86
 Dmitry Popko,86
+Pierluigi Basile,86
 Santiago Rodriguez Taverna,86
 Branko Djuric,85
 Li Tu,85
@@ -495,7 +496,6 @@ Sebastian Gima,85
 Aziz Ouakaa,85
 Alexander Donski,84
 Mitchell Krueger,84
-Pierluigi Basile,84
 Vladyslav Orlov,84
 Maximo Zeitune,84
 Jack Loge,84
